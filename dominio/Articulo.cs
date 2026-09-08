@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace dominio
 {
-    internal class Articulo
+    public class Articulo
     {
         public Articulo() { }
 
@@ -17,6 +17,12 @@ namespace dominio
         public int IdMarca_Articulo { get; set; }
         public int Categoria_Articulo {  get; set; }
         public double Precio_Articulo { get; set; }
+        public override string ToString()
+        {
+            return $"Codigo: {Codigo_Articulo}, Nombre: {Nombre_Articulo}";
+        }
+
+
 
     }
 
