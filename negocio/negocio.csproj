@@ -43,7 +43,11 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="ArticuloNegocio.cs" />
+<<<<<<< HEAD
     <Compile Include="MarcaNegocio.cs" />
+=======
+    <Compile Include="CategoriaNegocio.cs" />
+>>>>>>> 78c1671fab79901b5a5af7bd5bb64bc555882368
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
