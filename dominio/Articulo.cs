@@ -11,7 +11,7 @@ namespace dominio
     {
         public Articulo() { }
         
-        public int Id_Articulo { get; }
+        public int Id_Articulo { get;set }
         public string Codigo_Articulo {  get; set; }
         public string Nombre_Articulo {  get; set; }
         public string Descripcion_Articulo {  get; set; }
