@@ -52,14 +52,14 @@ namespace negocio
 
         }
 
-        public void agregar(Categoria nuevo) { 
+        public void agregarCategoria(Categoria nuevoC) { 
         
             AccesoDatos dato=new AccesoDatos();
 
             try
             {
                 dato.consultaSql("insert into CATEGORIAS (descripcion) values(@descripcion)");
-                dato.setearParametros("@descripcion", nuevo.Descripcion_Categoria);
+                dato.setearParametros("@descripcion", nuevoC.Descripcion_Categoria);
                 dato.ejecutarAccion();
 
 
@@ -70,6 +70,29 @@ namespace negocio
                 throw ex;
             }
             finally { dato.cerrarConexion(); }
+        
+        
+        }
+
+        public bool eliminarCategoria(int idCategoria) { 
+         
+         AccesoDatos dato =new AccesoDatos();
+            try
+            {
+                dato.consultaSql("delete from CATEGORIAS where Id = @id");
+                dato.setearParametros("@id", idCategoria);
+                dato.ejecutarAccion();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+                
+            }
+            finally { dato.cerrarConexion(); }
+        
         
         
         }
