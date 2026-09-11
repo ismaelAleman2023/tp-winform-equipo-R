@@ -21,17 +21,7 @@ namespace TPWinForm_equipo_R
             // Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Articulo articulo = new Articulo();
-            articulo.Codigo_Articulo = "1";
-            articulo.Nombre_Articulo = "pepe";
-            articulo.Descripcion_Articulo = "fff";
-            articulo.IdMarca_Articulo = 1;
-            articulo.Precio_Articulo = 1;
-            articulo.Categoria_Articulo = 2;
-            Debug.WriteLine(articulo.ToString());
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            articuloNegocio.alta(articulo);
-            articuloNegocio.listar();
+         
            
         }
     }
