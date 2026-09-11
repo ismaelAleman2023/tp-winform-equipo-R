@@ -9,10 +9,10 @@ namespace negocio
 {
     public class CategoriaNegocio
     {
-        public List<Categoria> lista() { 
-        
-        List<Categoria> listaCategoria=new List<Categoria>();
-         AccesoDatos dato = new AccesoDatos();
+        public List<Categoria> lista() {
+
+            List<Categoria> listaCategoria = new List<Categoria>();
+            AccesoDatos dato = new AccesoDatos();
 
             try
             {
@@ -38,18 +38,40 @@ namespace negocio
 
                 throw ex;
             }
-            finally { 
-            
-            dato.cerrarConexion();
+            finally {
+
+                dato.cerrarConexion();
             }
 
 
 
 
-            
+
+
+
+
+        }
+
+        public void agregar(Categoria nuevo) { 
         
+            AccesoDatos dato=new AccesoDatos();
+
+            try
+            {
+                dato.consultaSql("insert into CATEGORIAS (descripcion) values(@descripcion)");
+                dato.setearParametros("@descripcion", nuevo.Descripcion_Categoria);
+                dato.ejecutarAccion();
 
 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { dato.cerrarConexion(); }
+        
+        
         }
 
 
