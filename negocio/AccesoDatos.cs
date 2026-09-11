@@ -58,7 +58,7 @@ namespace negocio
             catch (Exception ex)
             {
 
-                throw ex;
+                throw ex; 
             }
         }
 
@@ -69,6 +69,11 @@ namespace negocio
                 lector.Close();
             }
             conexion.Close(); 
+        }
+
+        public void setearParametros(String nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
         }
 
 

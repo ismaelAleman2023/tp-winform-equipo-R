@@ -16,13 +16,7 @@ namespace negocio
 
             try
             {
-                datos.consultaSql("INSERT INTO dbo.ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"
-                    + articulo.Codigo_Articulo + "', '"
-                    + articulo.Nombre_Articulo + "', '"
-                    + articulo.Descripcion_Articulo + "', "
-                    + articulo.IdMarca_Articulo + ", "
-                    + articulo.Categoria_Articulo + ", "
-                    + articulo.Precio_Articulo + ")");
+                datos.consultaSql("INSERT INTO dbo.ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+ articulo.Codigo_Articulo + "', '"+ articulo.Nombre_Articulo + "', '"+ articulo.Descripcion_Articulo + "', "+ articulo.IdMarca_Articulo + ", "+ articulo.Categoria_Articulo + ", "+ articulo.Precio_Articulo + ")");
 
                 datos.ejecutarAccion();
             }
