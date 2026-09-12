@@ -120,7 +120,29 @@ namespace negocio
        
 
 
+        public void modificarMarca(Marca marca)
+        {
+           
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.consultaSql("update Marca set descripcion =@descripcion where id = @id");
+                datos.setearParametros("@descripcion", marca.Descripcion_Marca);
+                datos.ejecutarAccion();
 
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            { 
+                datos.cerrarConexion(); 
+            }
+
+        }
 
 
 
