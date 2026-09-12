@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
@@ -52,9 +54,9 @@ namespace negocio
 
         }
 
-        public void agregarCategoria(Categoria nuevoC) { 
-        
-            AccesoDatos dato=new AccesoDatos();
+        public void agregarCategoria(Categoria nuevoC) {
+
+            AccesoDatos dato = new AccesoDatos();
 
             try
             {
@@ -70,13 +72,13 @@ namespace negocio
                 throw ex;
             }
             finally { dato.cerrarConexion(); }
-        
-        
+
+
         }
 
-        public bool eliminarCategoria(int idCategoria) { 
-         
-         AccesoDatos dato =new AccesoDatos();
+        public bool eliminarCategoria(int idCategoria) {
+
+            AccesoDatos dato = new AccesoDatos();
             try
             {
                 dato.consultaSql("delete from CATEGORIAS where Id = @id");
@@ -89,18 +91,41 @@ namespace negocio
             {
 
                 throw ex;
-                
+
             }
             finally { dato.cerrarConexion(); }
-        
-        
-        
+
+
+
         }
 
+        public Categoria buscarIdCategoria(int idCategoria) {
+
+            AccesoDatos dato = new AccesoDatos();
+            Categoria categoria = new Categoria();
+
+            try
+            {
+                dato.consultaSql("select descripcion from CATEGORIAS where id=@id");
+                dato.setearParametros("@id", idCategoria);
+
+                while (dato.Lector.Read())
+                {
+                    Categoria aux = new Categoria();
+                    aux.Id_Categoria = idCategoria;
+                    aux.Descripcion_Categoria = (string)dato.Lector["descripcion"];
 
 
+                }
+                return categoria;
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            } finally { dato.cerrarConexion(); }
 
-
+        }
     }
 }
+
