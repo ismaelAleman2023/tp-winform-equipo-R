@@ -14,20 +14,20 @@ namespace negocio
         public List<Categoria> lista() {
 
             List<Categoria> listaCategoria = new List<Categoria>();
-            AccesoDatos dato = new AccesoDatos();
+            AccesoDatos datos = new AccesoDatos();
 
             try
             {
 
 
-                dato.consultaSql("select descripcion from CATEGORIAS");
+                datos.consultaSql("select descripcion from CATEGORIAS");
 
-                dato.ejecutarLetura();
+                datos.ejecutarLetura();
 
-                while (dato.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     Categoria aux = new Categoria();
-                    aux.Descripcion_Categoria = (string)dato.Lector["descripcion"];
+                    aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
                     listaCategoria.Add(aux);
 
                 }
@@ -42,7 +42,7 @@ namespace negocio
             }
             finally {
 
-                dato.cerrarConexion();
+                datos.cerrarConexion();
             }
 
 
@@ -56,13 +56,13 @@ namespace negocio
 
         public void agregarCategoria(Categoria nuevoC) {
 
-            AccesoDatos dato = new AccesoDatos();
+            AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                dato.consultaSql("insert into CATEGORIAS (descripcion) values(@descripcion)");
-                dato.setearParametros("@descripcion", nuevoC.Descripcion_Categoria);
-                dato.ejecutarAccion();
+                datos.consultaSql("insert into CATEGORIAS (descripcion) values(@descripcion)");
+                datos.setearParametros("@descripcion", nuevoC.Descripcion_Categoria);
+                datos.ejecutarAccion();
 
 
             }
@@ -71,19 +71,19 @@ namespace negocio
 
                 throw ex;
             }
-            finally { dato.cerrarConexion(); }
+            finally { datos.cerrarConexion(); }
 
 
         }
 
         public bool eliminarCategoria(int idCategoria) {
 
-            AccesoDatos dato = new AccesoDatos();
+            AccesoDatos datos = new AccesoDatos();
             try
             {
-                dato.consultaSql("delete from CATEGORIAS where Id = @id");
-                dato.setearParametros("@id", idCategoria);
-                dato.ejecutarAccion();
+                datos.consultaSql("delete from CATEGORIAS where Id = @id");
+                datos.setearParametros("@id", idCategoria);
+                datos.ejecutarAccion();
                 return true;
 
             }
@@ -93,7 +93,7 @@ namespace negocio
                 throw ex;
 
             }
-            finally { dato.cerrarConexion(); }
+            finally { datos.cerrarConexion(); }
 
 
 
@@ -101,19 +101,19 @@ namespace negocio
 
         public Categoria buscarIdCategoria(int idCategoria) {
 
-            AccesoDatos dato = new AccesoDatos();
+            AccesoDatos datos = new AccesoDatos();
             Categoria categoria = new Categoria();
 
             try
             {
-                dato.consultaSql("select descripcion from CATEGORIAS where id=@id");
-                dato.setearParametros("@id", idCategoria);
+                datos.consultaSql("select descripcion from CATEGORIAS where id=@id");
+                datos.setearParametros("@id", idCategoria);
 
-                while (dato.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     Categoria aux = new Categoria();
                     aux.Id_Categoria = idCategoria;
-                    aux.Descripcion_Categoria = (string)dato.Lector["descripcion"];
+                    aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
 
 
                 }
@@ -123,9 +123,33 @@ namespace negocio
             {
 
                 throw ex;
-            } finally { dato.cerrarConexion(); }
+            } finally { datos.cerrarConexion(); }
 
         }
+
+        public void modificarCategoria(Categoria cate) {
+            AccesoDatos datos= new AccesoDatos();    
+            
+            
+            try
+            {
+                datos.consultaSql("update CATEGORIAS set Descripcion=@Descripcion where id=@id");
+                datos.setearParametros("@descepcion",cate.Descripcion_Categoria);
+                datos.setearParametros("@id",cate.Id_Categoria);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+
+        
+        }
+
+
+
     }
 }
 
