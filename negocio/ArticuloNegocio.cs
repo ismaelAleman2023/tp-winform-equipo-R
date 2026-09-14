@@ -45,14 +45,14 @@ namespace negocio
                     Articulo auxiliar = new Articulo();
                     auxiliar.Marca_Articulo = new Marca();
                     auxiliar.Categoria_Articulo = new Categoria();
-                  
 
+                    auxiliar.Id_Articulo = (int)datos.Lector["ID"];
                     auxiliar.Codigo_Articulo = (string)datos.Lector["Codigo"];
                     auxiliar.Nombre_Articulo = (string)datos.Lector["Nombre"];
                     auxiliar.Descripcion_Articulo = (string)datos.Lector["Descripcion"];
                     auxiliar.Marca_Articulo.Id_Marca = (int)datos.Lector["IdMarca"];
                     auxiliar.Categoria_Articulo.Id_Categoria = (int)datos.Lector["IdCategoria"];
-                    auxiliar.Precio_Articulo = (float)datos.Lector["Precio"];
+                    auxiliar.Precio_Articulo = Convert.ToDouble(datos.Lector["Precio"]);
 
                     articulos.Add(auxiliar);
                 }
