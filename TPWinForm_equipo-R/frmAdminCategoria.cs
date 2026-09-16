@@ -41,5 +41,16 @@ namespace TPWinForm_equipo_R
         {
             Application.Exit();
         }
+
+        private void btnEliminarCate_Click(object sender, EventArgs e)
+        {
+            frmFormuEliminarCate frmEli=new frmFormuEliminarCate();
+            frmEli.TopLevel=false;
+            frmEli.Dock = DockStyle.Fill;
+            pnlContenedorCate.Controls.Clear();
+            pnlContenedorCate.Controls.Add(frmEli);
+            frmEli.Show();
+
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace TPWinForm_equipo_R
 {
     public partial class frmFormuCategoria : Form
@@ -31,12 +32,30 @@ namespace TPWinForm_equipo_R
 
         private void frmFormuCategoria_Load(object sender, EventArgs e)
         {
+            txtId.Text = "Id Asignado Automanticamente";
             
-
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text)) {
+
+                lblMensajes.ForeColor = Color.Red;
+                lblMensajes.Text = "El Campo no puede esta vacio";
+                txtDescripcion.Focus();
+                return;
+            }
+
+            if (txtDescripcion.Text.Any(char.IsDigit))
+            {
+                lblMensajes.ForeColor = Color.Red;
+                lblMensajes.Text = "El nombre no puede contener números.";
+                txtDescripcion.Focus();
+                return;
+            }
+            
+
             Categoria cate=new Categoria();
             CategoriaNegocio catenego=new CategoriaNegocio();
             
@@ -46,8 +65,9 @@ namespace TPWinForm_equipo_R
             string descrip=txtDescripcion.Text;
             cate.Descripcion_Categoria=descrip;
                 catenego.agregarCategoria(cate);
+                lblMensajes.Text = "";
                 MessageBox.Show("Agregado Correctamente");
-                Close();
+                txtDescripcion.Text = "";
             }
             catch (Exception ex)
             {

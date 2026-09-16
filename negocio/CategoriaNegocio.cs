@@ -108,16 +108,18 @@ namespace negocio
             {
                 datos.consultaSql("select descripcion from CATEGORIAS where id=@id");
                 datos.setearParametros("@id", idCategoria);
+                datos.ejecutarLetura();
 
-                while (datos.Lector.Read())
+                if (datos.Lector.Read())
                 {
                     Categoria aux = new Categoria();
                     aux.Id_Categoria = idCategoria;
                     aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
-
+                    return categoria;
 
                 }
-                return categoria;
+
+                return null;
             }
             catch (Exception ex)
             {
