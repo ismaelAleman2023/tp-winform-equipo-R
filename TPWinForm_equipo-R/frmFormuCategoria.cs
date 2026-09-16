@@ -13,12 +13,23 @@ using System.Windows.Forms;
 
 namespace TPWinForm_equipo_R
 {
+  
     public partial class frmFormuCategoria : Form
     {
+        private Categoria categoriaModificar = null;
+
         public frmFormuCategoria()
         {
             InitializeComponent();
         }
+        
+        public frmFormuCategoria(Categoria cat)
+        {InitializeComponent();
+
+            categoriaModificar=cat;
+
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -32,9 +43,26 @@ namespace TPWinForm_equipo_R
 
         private void frmFormuCategoria_Load(object sender, EventArgs e)
         {
-            txtId.Text = "Id Asignado Automanticamente";
             
-        }
+
+            if (categoriaModificar!=null) { 
+            
+                txtId.Text=categoriaModificar.Id_Categoria.ToString();
+                txtDescripcion.Text = categoriaModificar.Descripcion_Categoria;
+                lbTituloCate.Text = "Modificar Categoria";
+
+
+            }
+            else{
+
+              txtId.Text = "Id Asignado Automanticamente";
+
+                lbTituloCate.Text = "Agregar Categoria";
+            }
+
+
+            
+        } 
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
@@ -50,7 +78,7 @@ namespace TPWinForm_equipo_R
             if (txtDescripcion.Text.Any(char.IsDigit))
             {
                 lblMensajes.ForeColor = Color.Red;
-                lblMensajes.Text = "El nombre no puede contener números.";
+                lblMensajes.Text = "El Campo no puede contener números.";
                 txtDescripcion.Focus();
                 return;
             }
@@ -58,16 +86,36 @@ namespace TPWinForm_equipo_R
 
             Categoria cate=new Categoria();
             CategoriaNegocio catenego=new CategoriaNegocio();
-            
+
             try
             {
 
-            string descrip=txtDescripcion.Text;
-            cate.Descripcion_Categoria=descrip;
-                catenego.agregarCategoria(cate);
-                lblMensajes.Text = "";
-                MessageBox.Show("Agregado Correctamente");
-                txtDescripcion.Text = "";
+                string descrip = txtDescripcion.Text;
+
+                if (lbTituloCate.Text == "Agregar Categoria")
+                {
+
+                    cate.Descripcion_Categoria = descrip;
+                    catenego.agregarCategoria(cate);
+                    lblMensajes.Text = "";
+                    MessageBox.Show("Agregado Correctamente");
+                    txtDescripcion.Text = "";
+                }
+                else if(lbTituloCate.Text == "Modificar Categoria")
+                {
+
+                    cate.Descripcion_Categoria = descrip;
+                    cate.Id_Categoria = int.Parse(txtId.Text);
+                    catenego.modificarCategoria(cate);
+                    
+                    lblMensajes.Text = "";
+                    MessageBox.Show("Modificado Correctamente");
+                    Close();
+
+                }
+
+                
+            
             }
             catch (Exception ex)
             {

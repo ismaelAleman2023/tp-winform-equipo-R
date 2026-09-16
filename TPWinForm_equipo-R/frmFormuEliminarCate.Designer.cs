@@ -86,6 +86,7 @@
             this.btnCancelarCate.TabIndex = 5;
             this.btnCancelarCate.Text = "Cancelar";
             this.btnCancelarCate.UseVisualStyleBackColor = true;
+            this.btnCancelarCate.Click += new System.EventHandler(this.btnCancelarCate_Click);
             // 
             // lbMensajes
             // 

@@ -102,7 +102,7 @@ namespace negocio
         public Categoria buscarIdCategoria(int idCategoria) {
 
             AccesoDatos datos = new AccesoDatos();
-            Categoria categoria = new Categoria();
+            Categoria aux = new Categoria();
 
             try
             {
@@ -112,10 +112,10 @@ namespace negocio
 
                 if (datos.Lector.Read())
                 {
-                    Categoria aux = new Categoria();
+                    
                     aux.Id_Categoria = idCategoria;
                     aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
-                    return categoria;
+                    return aux;
 
                 }
 
@@ -136,7 +136,7 @@ namespace negocio
             try
             {
                 datos.consultaSql("update CATEGORIAS set Descripcion=@Descripcion where id=@id");
-                datos.setearParametros("@descepcion",cate.Descripcion_Categoria);
+                datos.setearParametros("@Descripcion", cate.Descripcion_Categoria);
                 datos.setearParametros("@id",cate.Id_Categoria);
                 datos.ejecutarAccion();
             }

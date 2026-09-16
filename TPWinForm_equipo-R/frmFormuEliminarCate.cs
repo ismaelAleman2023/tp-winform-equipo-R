@@ -48,13 +48,30 @@ namespace TPWinForm_equipo_R
 
             try
             {
-
-
-               cate.eliminarCategoria(idTxt);
+                // se pude poner en una clase util
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Está seguro de eliminar el artículo?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+);
+                if (respuesta == DialogResult.Yes) {
+                cate.eliminarCategoria(idTxt);
 
 
                 lbMensajes.ForeColor = Color.Green;
                 lbMensajes.Text = "Eliminado Correctamente";
+                }
+                else
+                {
+
+                    MessageBox.Show("Eliminacion Cancelada");
+
+
+                }
+
+
+                   
 
 
             }
@@ -65,6 +82,11 @@ namespace TPWinForm_equipo_R
             }
             
 
+        }
+
+        private void btnCancelarCate_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
