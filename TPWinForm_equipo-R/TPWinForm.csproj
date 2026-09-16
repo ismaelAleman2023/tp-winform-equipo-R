@@ -53,8 +53,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdminCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminCategoria.Designer.cs">
+      <DependentUpon>frmAdminCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuCategoria.Designer.cs">
+      <DependentUpon>frmFormuCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuEliminarCate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuEliminarCate.Designer.cs">
+      <DependentUpon>frmFormuEliminarCate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdminCategoria.resx">
+      <DependentUpon>frmAdminCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuCategoria.resx">
+      <DependentUpon>frmFormuCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuEliminarCate.resx">
+      <DependentUpon>frmFormuEliminarCate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
