@@ -53,11 +53,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFormuListarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuListarMarca.Designer.cs">
+      <DependentUpon>frmFormuListarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuModificarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuModificarMarca.Designer.cs">
+      <DependentUpon>frmFormuModificarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdminCategoria.Designer.cs">
       <DependentUpon>frmAdminCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminMarca.Designer.cs">
+      <DependentUpon>frmAdminMarca.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFormuCategoria.cs">
       <SubType>Form</SubType>
@@ -71,16 +89,43 @@
     <Compile Include="frmFormuEliminarCate.Designer.cs">
       <DependentUpon>frmFormuEliminarCate.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFormuEliminarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuEliminarMarca.Designer.cs">
+      <DependentUpon>frmFormuEliminarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuMarca.Designer.cs">
+      <DependentUpon>frmFormuMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdminCategoria.resx">
       <DependentUpon>frmAdminCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminMarca.resx">
+      <DependentUpon>frmAdminMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormuCategoria.resx">
       <DependentUpon>frmFormuCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormuEliminarCate.resx">
       <DependentUpon>frmFormuEliminarCate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuEliminarMarca.resx">
+      <DependentUpon>frmFormuEliminarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuListarMarca.resx">
+      <DependentUpon>frmFormuListarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuMarca.resx">
+      <DependentUpon>frmFormuMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuModificarMarca.resx">
+      <DependentUpon>frmFormuModificarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

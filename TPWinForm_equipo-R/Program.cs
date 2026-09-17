@@ -20,7 +20,7 @@ namespace TPWinForm_equipo_R
         {
            Application.EnableVisualStyles();
            Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new fmAdmiCategoria());
+           Application.Run(new frmAdminMarca());
 
         }
     }
