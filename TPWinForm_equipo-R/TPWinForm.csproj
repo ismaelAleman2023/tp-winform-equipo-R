@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>TPWinForm_equipo_R</RootNamespace>
     <AssemblyName>TPWinForm_equipo-R</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -32,6 +32,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TPWinForm_equipo_R.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -77,7 +83,6 @@
     <Compile Include="frmModificarIdArt.Designer.cs">
       <DependentUpon>frmModificarIdArt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdminArticulo.resx">
       <DependentUpon>frmAdminArticulo.cs</DependentUpon>
@@ -90,6 +95,98 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarIdArt.resx">
       <DependentUpon>frmModificarIdArt.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="frmFormuListarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuListarMarca.Designer.cs">
+      <DependentUpon>frmFormuListarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuModificarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuModificarMarca.Designer.cs">
+      <DependentUpon>frmFormuModificarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminCategoria.Designer.cs">
+      <DependentUpon>frmAdminCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminMarca.Designer.cs">
+      <DependentUpon>frmAdminMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminPrincipal.Designer.cs">
+      <DependentUpon>FrmAdminPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuCategoria.Designer.cs">
+      <DependentUpon>frmFormuCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuEliminarCate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuEliminarCate.Designer.cs">
+      <DependentUpon>frmFormuEliminarCate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuEliminarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuEliminarMarca.Designer.cs">
+      <DependentUpon>frmFormuEliminarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormuMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormuMarca.Designer.cs">
+      <DependentUpon>frmFormuMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIdModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIdModificar.Designer.cs">
+      <DependentUpon>frmIdModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdminCategoria.resx">
+      <DependentUpon>frmAdminCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminMarca.resx">
+      <DependentUpon>frmAdminMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminPrincipal.resx">
+      <DependentUpon>FrmAdminPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuCategoria.resx">
+      <DependentUpon>frmFormuCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuEliminarCate.resx">
+      <DependentUpon>frmFormuEliminarCate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuEliminarMarca.resx">
+      <DependentUpon>frmFormuEliminarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuListarMarca.resx">
+      <DependentUpon>frmFormuListarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuMarca.resx">
+      <DependentUpon>frmFormuMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormuModificarMarca.resx">
+      <DependentUpon>frmFormuModificarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIdModificar.resx">
+      <DependentUpon>frmIdModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

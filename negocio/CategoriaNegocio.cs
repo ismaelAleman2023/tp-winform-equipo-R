@@ -103,22 +103,24 @@ namespace negocio
         public Categoria buscarIdCategoria(int idCategoria) {
 
             AccesoDatos datos = new AccesoDatos();
-            Categoria categoria = new Categoria();
+            Categoria aux = new Categoria();
 
             try
             {
                 datos.consultaSql("select descripcion from CATEGORIAS where id=@id");
                 datos.setearParametros("@id", idCategoria);
+                datos.ejecutarLetura();
 
-                while (datos.Lector.Read())
+                if (datos.Lector.Read())
                 {
-                    Categoria aux = new Categoria();
+                    
                     aux.Id_Categoria = idCategoria;
                     aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
-
+                    return aux;
 
                 }
-                return categoria;
+
+                return null;
             }
             catch (Exception ex)
             {
@@ -135,7 +137,7 @@ namespace negocio
             try
             {
                 datos.consultaSql("update CATEGORIAS set Descripcion=@Descripcion where id=@id");
-                datos.setearParametros("@descepcion",cate.Descripcion_Categoria);
+                datos.setearParametros("@Descripcion", cate.Descripcion_Categoria);
                 datos.setearParametros("@id",cate.Id_Categoria);
                 datos.ejecutarAccion();
             }
@@ -149,6 +151,7 @@ namespace negocio
         
         }
 
+        
 
 
     }
