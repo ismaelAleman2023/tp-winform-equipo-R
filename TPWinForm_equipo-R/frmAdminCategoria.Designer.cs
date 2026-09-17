@@ -67,6 +67,7 @@
             this.btnModificarCate.TabIndex = 5;
             this.btnModificarCate.Text = "Modificar";
             this.btnModificarCate.UseVisualStyleBackColor = true;
+            this.btnModificarCate.Click += new System.EventHandler(this.btnModificarCate_Click);
             // 
             // btnSalirCate
             // 
@@ -128,7 +129,7 @@
         private System.Windows.Forms.Button btnEliminarCate;
         private System.Windows.Forms.Button btnModificarCate;
         private System.Windows.Forms.Button btnSalirCate;
-        private System.Windows.Forms.Panel pnlContenedorCate;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel pnlContenedorCate;
     }
 }

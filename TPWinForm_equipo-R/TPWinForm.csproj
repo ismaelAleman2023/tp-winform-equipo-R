@@ -101,6 +101,12 @@
     <Compile Include="frmFormuMarca.Designer.cs">
       <DependentUpon>frmFormuMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIdModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIdModificar.Designer.cs">
+      <DependentUpon>frmIdModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdminCategoria.resx">
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormuModificarMarca.resx">
       <DependentUpon>frmFormuModificarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIdModificar.resx">
+      <DependentUpon>frmIdModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

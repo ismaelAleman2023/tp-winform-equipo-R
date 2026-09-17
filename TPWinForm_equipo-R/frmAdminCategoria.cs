@@ -18,21 +18,15 @@ namespace TPWinForm_equipo_R
         }
 
         private void btnAgregarCate_Click(object sender, EventArgs e)
-        {
-            foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType()==typeof(frmFormuCategoria)) {
-
-                    return;
-                }
-
-            }
-
-
+        { 
+            
+            pnlContenedorCate.Controls.Clear();
             frmFormuCategoria frm = new frmFormuCategoria();
+          
             frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
-            pnlContenedorCate.Controls.Clear();
+            frm.FormBorderStyle = FormBorderStyle.None;
+
             pnlContenedorCate.Controls.Add(frm);
             frm.Show();
         }
@@ -44,12 +38,28 @@ namespace TPWinForm_equipo_R
 
         private void btnEliminarCate_Click(object sender, EventArgs e)
         {
+           
+
+
+            pnlContenedorCate.Controls.Clear();
             frmFormuEliminarCate frmEli=new frmFormuEliminarCate();
             frmEli.TopLevel=false;
             frmEli.Dock = DockStyle.Fill;
-            pnlContenedorCate.Controls.Clear();
+            frmEli.FormBorderStyle = FormBorderStyle.None;
             pnlContenedorCate.Controls.Add(frmEli);
             frmEli.Show();
+
+        }
+
+        private void btnModificarCate_Click(object sender, EventArgs e)
+        {
+            pnlContenedorCate.Controls.Clear();
+            frmIdModificar Modi=new frmIdModificar(this);
+            Modi.TopLevel=false;
+            Modi.Dock = DockStyle.Fill;
+            pnlContenedorCate.Controls.Add((frmIdModificar)Modi);
+            Modi.Show();
+
 
         }
     }
