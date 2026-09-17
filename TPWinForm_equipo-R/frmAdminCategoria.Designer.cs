@@ -33,7 +33,7 @@
             this.btnModificarCate = new System.Windows.Forms.Button();
             this.btnSalirCate = new System.Windows.Forms.Button();
             this.pnlContenedorCate = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAgregarCate
@@ -90,16 +90,16 @@
             this.pnlContenedorCate.Size = new System.Drawing.Size(563, 451);
             this.pnlContenedorCate.TabIndex = 7;
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(256, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 31);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Administrador Categoria";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(227, 19);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(139, 31);
+            this.lblTitulo.TabIndex = 8;
+            this.lblTitulo.Text = " Categoria";
             // 
             // fmAdmiCategoria
             // 
@@ -107,7 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 550);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pnlContenedorCate);
             this.Controls.Add(this.btnSalirCate);
             this.Controls.Add(this.btnModificarCate);
@@ -129,7 +129,7 @@
         private System.Windows.Forms.Button btnEliminarCate;
         private System.Windows.Forms.Button btnModificarCate;
         private System.Windows.Forms.Button btnSalirCate;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
         public System.Windows.Forms.Panel pnlContenedorCate;
     }
 }

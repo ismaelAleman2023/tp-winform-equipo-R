@@ -24,55 +24,52 @@ namespace TPWinForm_equipo_R
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
-            foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(frmFormuMarca))
-                {
-                    return;
-                }
-            }
+            pnlContenedorMarca.Controls.Clear();
 
             frmFormuMarca frm = new frmFormuMarca();
             frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
-            pnlContenedorMarca.Controls.Clear();
+            
             pnlContenedorMarca.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnModificarMarca_Click(object sender, EventArgs e)
-        {
+        {   
+            pnlContenedorMarca.Controls.Clear();
             frmFormuModificarMarca frm = new frmFormuModificarMarca();
             frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
-            pnlContenedorMarca.Controls.Clear();
+            
             pnlContenedorMarca.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnEliminarMarca_Click(object sender, EventArgs e)
-        {
+        {   
+            pnlContenedorMarca.Controls.Clear();
             frmFormuEliminarMarca frmEli = new frmFormuEliminarMarca();
             frmEli.TopLevel = false;
             frmEli.Dock = DockStyle.Fill;
-            pnlContenedorMarca.Controls.Clear();
+            
             pnlContenedorMarca.Controls.Add(frmEli);
             frmEli.Show();
         }
 
         private void btnListarMarca_Click(object sender, EventArgs e)
-        {
+        {   
+            pnlContenedorMarca.Controls.Clear();
             frmFormuListarMarca frm = new frmFormuListarMarca();
             frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
-            pnlContenedorMarca.Controls.Clear();
+            
             pnlContenedorMarca.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnSalirMarca_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
     }
 }

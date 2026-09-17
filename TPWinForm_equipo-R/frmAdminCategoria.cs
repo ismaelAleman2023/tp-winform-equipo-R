@@ -33,7 +33,7 @@ namespace TPWinForm_equipo_R
 
         private void btnSalirCate_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void btnEliminarCate_Click(object sender, EventArgs e)
