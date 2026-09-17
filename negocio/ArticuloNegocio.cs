@@ -16,7 +16,7 @@ namespace negocio
 
             try
             {
-                datos.consultaSql("INSERT INTO dbo.ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+ articulo.Codigo_Articulo + "', '"+ articulo.Nombre_Articulo + "', '"+ articulo.Descripcion_Articulo + "', "+ articulo.Marca_Articulo.Id_Marca + ", "+ articulo.Categoria_Articulo.Id_Categoria + ", "+ articulo.Precio_Articulo + ")");
+                datos.consultaSql("INSERT INTO dbo.ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('" + articulo.Codigo_Articulo + "', '" + articulo.Nombre_Articulo + "', '" + articulo.Descripcion_Articulo + "', " + articulo.Marca_Articulo.Id_Marca + ", " + articulo.Categoria_Articulo.Id_Categoria + ", " + articulo.Precio_Articulo + ")");
 
                 datos.ejecutarAccion();
             }
@@ -52,7 +52,7 @@ namespace negocio
                     auxiliar.Descripcion_Articulo = (string)datos.Lector["Descripcion"];
                     auxiliar.Marca_Articulo.Id_Marca = (int)datos.Lector["IdMarca"];
                     auxiliar.Categoria_Articulo.Id_Categoria = (int)datos.Lector["IdCategoria"];
-                    auxiliar.Precio_Articulo = Convert.ToDouble(datos.Lector["Precio"]);
+                    auxiliar.Precio_Articulo = Convert.ToDecimal(datos.Lector["Precio"]);
 
                     articulos.Add(auxiliar);
                 }
@@ -68,7 +68,7 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-        public void eliminar (int id)
+        public void eliminar(int id)
         {
             AccesoDatos datos = new AccesoDatos();
             try
@@ -87,7 +87,7 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-           
+
         }
 
         public void modificar(Articulo articulo)
@@ -99,7 +99,7 @@ namespace negocio
                 datos.setearParametros("@Codigo", articulo.Codigo_Articulo);
                 datos.setearParametros("@Nombre", articulo.Nombre_Articulo);
                 datos.setearParametros("@Descripcion", articulo.Descripcion_Articulo);
-                datos.setearParametros("@IdMarca", articulo.Marca_Articulo.Id_Marca); 
+                datos.setearParametros("@IdMarca", articulo.Marca_Articulo.Id_Marca);
                 datos.setearParametros("@IdCategoria", articulo.Categoria_Articulo.Id_Categoria);
                 datos.setearParametros("@Precio", articulo.Precio_Articulo);
                 datos.setearParametros("@Id", articulo.Id_Articulo);
@@ -115,5 +115,76 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public int ultimoId()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int aux=0;   
+
+            try
+            {
+                datos.consultaSql("select max (id) as id from articulos ");
+                datos.ejecutarLetura();
+                if (datos.Lector.Read() && datos.Lector["id"]!= DBNull.Value)
+                {
+                  aux = (int)datos.Lector["id"];
+
+                }
+               
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion(); 
+            }
+            return aux;
+        }
+
+        public Articulo BuscarId(int id)
+        {
+            AccesoDatos datos =new AccesoDatos();
+            Articulo art = null;
+            try
+            {
+                datos.consultaSql("select id, codigo,nombre, descripcion,idMarca, idCategoria,precio from Articulos where id=@Id");
+                datos.setearParametros("@Id", id);
+                datos.ejecutarLetura();
+
+                if (datos.Lector.Read())
+                {
+                    art = new Articulo();
+                    art.Id_Articulo =(int) datos.Lector["id"];
+                    art.Codigo_Articulo = (string) datos.Lector["codigo"];
+                    art.Nombre_Articulo =(string) datos.Lector["nombre"];
+                    art.Descripcion_Articulo = (string)datos.Lector["descripcion"];
+
+                    art.Marca_Articulo = new Marca();
+                    art.Marca_Articulo.Id_Marca = (int) datos.Lector["idMarca"];
+
+                    art.Categoria_Articulo = new Categoria();
+                    art.Categoria_Articulo.Id_Categoria =(int) datos.Lector["idCategoria"];
+
+                    art.Precio_Articulo = (decimal)datos.Lector["precio"];
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally 
+            { 
+                datos.cerrarConexion(); 
+            }
+
+            return art;
+        }
+
+
+
     }
 }

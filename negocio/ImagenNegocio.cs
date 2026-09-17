@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace negocio
 {
-    internal class ImagenNegocio
+    public class ImagenNegocio
     {
         
      public void agregarImagen(Imagen img)
@@ -16,7 +16,7 @@ namespace negocio
 
             try
             {
-                datos.consultaSql("insert into Imagenes(idArticulo,ImagenUrl) select (@idArt, @imagen)");
+                datos.consultaSql("insert into Imagenes(idArticulo,ImagenUrl) values (@idArt, @imagen)");
                 datos.setearParametros("@idArt", img.IdArticulo_Imagen);
                 datos.setearParametros("@imagen", img.Url_Imagen);
                 datos.ejecutarAccion();
@@ -38,6 +38,7 @@ namespace negocio
             {
                 datos.consultaSql("delete from imagenes where IdArticulo = @idart");
                 datos.setearParametros("@idart", idArt);
+                datos.ejecutarAccion();
 
             }
             catch (Exception ex)
@@ -48,15 +49,15 @@ namespace negocio
             finally {  datos.cerrarConexion(); }
         }
 
-        public Imagen BuscarImagenId (int idImagen)
+        public Imagen BuscarImagenId (int idart)
         {
 
             AccesoDatos datos = new AccesoDatos();
             Imagen img = new Imagen();
             try
             {
-                datos.consultaSql("select id, idArticulo, imagenUrl from Imagenes where id = @id");
-                datos.setearParametros("@id", idImagen);
+                datos.consultaSql("select id, idArticulo, imagenUrl from Imagenes where idArticulo = @idarticulo");
+                datos.setearParametros("@idarticulo", idart);
                 datos.ejecutarLetura();
 
                 if(datos.Lector.Read())
@@ -79,14 +80,15 @@ namespace negocio
         }
 
 
-        public void modificarImagen(string url, int idImagen)
+        public void modificarImagen(string url, int idArticulo)
         {
             AccesoDatos datos=new AccesoDatos();
 
             try
             {
-                datos.consultaSql("update Imagen set imagenUrl = @urlImagen");
-                datos.setearParametros("@rlImagen", url);
+                datos.consultaSql("update Imagenes set imagenUrl = @urlImagen where idarticulo = @idArt");
+                datos.setearParametros("@urlImagen", url);
+                datos.setearParametros("@idArt", idArticulo);
                 datos.ejecutarAccion();
 
             }
@@ -100,6 +102,7 @@ namespace negocio
 
         }
 
+        
 
     }
 }

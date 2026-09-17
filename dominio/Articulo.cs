@@ -18,7 +18,7 @@ namespace dominio
         public string Descripcion_Articulo {  get; set; }
         public Marca Marca_Articulo { get; set; }
         public Categoria Categoria_Articulo { get; set; }
-        public double Precio_Articulo { get; set; }
+        public decimal Precio_Articulo { get; set; }
         public override string ToString()
         {
             return $"Codigo: {Codigo_Articulo}, Nombre: {Nombre_Articulo}";

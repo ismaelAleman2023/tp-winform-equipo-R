@@ -53,8 +53,44 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdminArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminArticulo.Designer.cs">
+      <DependentUpon>frmAdminArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticulo.Designer.cs">
+      <DependentUpon>frmArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminarArticulo.Designer.cs">
+      <DependentUpon>frmEliminarArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarIdArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarIdArt.Designer.cs">
+      <DependentUpon>frmModificarIdArt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAdminArticulo.resx">
+      <DependentUpon>frmAdminArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArticulo.resx">
+      <DependentUpon>frmArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminarArticulo.resx">
+      <DependentUpon>frmEliminarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarIdArt.resx">
+      <DependentUpon>frmModificarIdArt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

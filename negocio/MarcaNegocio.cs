@@ -16,7 +16,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.consultaSql("insert into marcas (Descripcion) select (@Descripcion)");
+                datos.consultaSql("insert into marcas (Descripcion) values (@Descripcion)");
                 datos.setearParametros("@Descripcion", nuevoM.Descripcion_Marca);
                 datos.ejecutarAccion();
 

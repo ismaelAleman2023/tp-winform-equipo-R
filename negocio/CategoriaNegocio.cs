@@ -20,7 +20,7 @@ namespace negocio
             {
 
 
-                datos.consultaSql("select descripcion from CATEGORIAS");
+                datos.consultaSql("select id, descripcion from CATEGORIAS");
 
                 datos.ejecutarLetura();
 
@@ -28,6 +28,7 @@ namespace negocio
                 {
                     Categoria aux = new Categoria();
                     aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
+                    aux.Id_Categoria = (int)datos.Lector["id"];
                     listaCategoria.Add(aux);
 
                 }
