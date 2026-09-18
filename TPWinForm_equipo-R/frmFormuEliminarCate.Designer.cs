@@ -42,7 +42,7 @@
             this.lbTituloEliCate.BackColor = System.Drawing.Color.Red;
             this.lbTituloEliCate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbTituloEliCate.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTituloEliCate.Location = new System.Drawing.Point(126, 41);
+            this.lbTituloEliCate.Location = new System.Drawing.Point(63, 49);
             this.lbTituloEliCate.Name = "lbTituloEliCate";
             this.lbTituloEliCate.Size = new System.Drawing.Size(325, 44);
             this.lbTituloEliCate.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(143, 152);
+            this.lbId.Location = new System.Drawing.Point(66, 121);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(85, 20);
             this.lbId.TabIndex = 2;
@@ -61,7 +61,7 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(239, 153);
+            this.txtid.Location = new System.Drawing.Point(162, 122);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(172, 20);
             this.txtid.TabIndex = 3;
@@ -69,7 +69,7 @@
             // btnConfirmarEli
             // 
             this.btnConfirmarEli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnConfirmarEli.Location = new System.Drawing.Point(368, 350);
+            this.btnConfirmarEli.Location = new System.Drawing.Point(293, 266);
             this.btnConfirmarEli.Name = "btnConfirmarEli";
             this.btnConfirmarEli.Size = new System.Drawing.Size(75, 23);
             this.btnConfirmarEli.TabIndex = 4;
@@ -80,7 +80,7 @@
             // btnCancelarCate
             // 
             this.btnCancelarCate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelarCate.Location = new System.Drawing.Point(126, 350);
+            this.btnCancelarCate.Location = new System.Drawing.Point(88, 266);
             this.btnCancelarCate.Name = "btnCancelarCate";
             this.btnCancelarCate.Size = new System.Drawing.Size(75, 23);
             this.btnCancelarCate.TabIndex = 5;
@@ -92,10 +92,10 @@
             // 
             this.lbMensajes.AutoSize = true;
             this.lbMensajes.BackColor = System.Drawing.Color.Transparent;
-            this.lbMensajes.Location = new System.Drawing.Point(140, 221);
-            this.lbMensajes.MinimumSize = new System.Drawing.Size(300, 100);
+            this.lbMensajes.Location = new System.Drawing.Point(127, 174);
+            this.lbMensajes.MinimumSize = new System.Drawing.Size(250, 60);
             this.lbMensajes.Name = "lbMensajes";
-            this.lbMensajes.Size = new System.Drawing.Size(300, 100);
+            this.lbMensajes.Size = new System.Drawing.Size(250, 60);
             this.lbMensajes.TabIndex = 6;
             // 
             // frmFormuEliminarCate
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(563, 494);
+            this.ClientSize = new System.Drawing.Size(458, 359);
             this.Controls.Add(this.lbMensajes);
             this.Controls.Add(this.btnCancelarCate);
             this.Controls.Add(this.btnConfirmarEli);
@@ -111,8 +111,8 @@
             this.Controls.Add(this.lbId);
             this.Controls.Add(this.lbTituloEliCate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(563, 494);
-            this.MinimumSize = new System.Drawing.Size(563, 494);
+            this.MaximumSize = new System.Drawing.Size(458, 359);
+            this.MinimumSize = new System.Drawing.Size(458, 359);
             this.Name = "frmFormuEliminarCate";
             this.Text = "frmFormuEliminarCate";
             this.ResumeLayout(false);

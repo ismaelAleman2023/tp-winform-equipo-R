@@ -41,7 +41,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Red;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label1.Location = new System.Drawing.Point(133, 24);
+            this.label1.Location = new System.Drawing.Point(99, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 42);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(137, 87);
+            this.label2.Location = new System.Drawing.Point(103, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 1;
@@ -59,14 +59,14 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(224, 87);
+            this.txtid.Location = new System.Drawing.Point(190, 128);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(100, 20);
             this.txtid.TabIndex = 2;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(146, 227);
+            this.btnCancelar.Location = new System.Drawing.Point(112, 268);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // btnConfirmarEli
             // 
-            this.btnConfirmarEli.Location = new System.Drawing.Point(276, 227);
+            this.btnConfirmarEli.Location = new System.Drawing.Point(242, 268);
             this.btnConfirmarEli.Name = "btnConfirmarEli";
             this.btnConfirmarEli.Size = new System.Drawing.Size(84, 23);
             this.btnConfirmarEli.TabIndex = 4;
@@ -87,7 +87,7 @@
             // lbMensajes
             // 
             this.lbMensajes.AutoSize = true;
-            this.lbMensajes.Location = new System.Drawing.Point(111, 110);
+            this.lbMensajes.Location = new System.Drawing.Point(77, 151);
             this.lbMensajes.MinimumSize = new System.Drawing.Size(300, 100);
             this.lbMensajes.Name = "lbMensajes";
             this.lbMensajes.Size = new System.Drawing.Size(300, 100);
@@ -99,13 +99,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(534, 450);
+            this.ClientSize = new System.Drawing.Size(458, 359);
             this.Controls.Add(this.lbMensajes);
             this.Controls.Add(this.btnConfirmarEli);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(458, 359);
+            this.MinimumSize = new System.Drawing.Size(458, 359);
             this.Name = "frmFormuEliminarMarca";
             this.Text = "frmFormuEliminarMarca";
             this.ResumeLayout(false);

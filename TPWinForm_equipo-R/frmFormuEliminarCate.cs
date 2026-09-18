@@ -54,7 +54,7 @@ namespace TPWinForm_equipo_R
                     "Confirmar eliminación",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
-);
+                 );
                 if (respuesta == DialogResult.Yes) {
                 cate.eliminarCategoria(idTxt);
 

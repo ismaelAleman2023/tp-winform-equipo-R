@@ -49,10 +49,32 @@ namespace TPWinForm_equipo_R
 
             try
             {
-                marcaNego.eliminarMarca(idTxt);
 
-                lbMensajes.ForeColor = Color.Green;
-                lbMensajes.Text = "Eliminado Correctamente";
+                // se pude poner en una clase util
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Está seguro de eliminar el artículo?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                 );
+                if (respuesta == DialogResult.Yes)
+                {
+                    marcaNego.eliminarMarca(idTxt);
+
+
+                    lbMensajes.ForeColor = Color.Green;
+                    lbMensajes.Text = "Eliminado Correctamente";
+                }
+                else
+                {
+
+                    MessageBox.Show("Eliminacion Cancelada");
+
+
+                }
+
+
+
             }
             catch (Exception)
             {

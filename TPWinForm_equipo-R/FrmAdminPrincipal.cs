@@ -49,5 +49,11 @@ namespace TPWinForm_equipo_R
             pnlConteCentral.Controls.Add(adminArt);
             adminArt.Show();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+
+            Close();
+        }
     }
 }

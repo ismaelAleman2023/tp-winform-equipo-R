@@ -41,7 +41,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Yellow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label1.Location = new System.Drawing.Point(172, 28);
+            this.label1.Location = new System.Drawing.Point(94, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 42);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(277, 109);
+            this.txtDescripcion.Location = new System.Drawing.Point(199, 121);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(128, 20);
             this.txtDescripcion.TabIndex = 2;
@@ -58,7 +58,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.lblDescripcion.Location = new System.Drawing.Point(146, 103);
+            this.lblDescripcion.Location = new System.Drawing.Point(68, 115);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(125, 25);
             this.lblDescripcion.TabIndex = 4;
@@ -66,9 +66,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(151, 272);
+            this.btnCancelar.Location = new System.Drawing.Point(87, 271);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(86, 31);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -76,9 +76,9 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(292, 272);
+            this.btnConfirmar.Location = new System.Drawing.Point(292, 271);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(88, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(86, 31);
             this.btnConfirmar.TabIndex = 6;
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(137, 132);
+            this.lblMensaje.Location = new System.Drawing.Point(59, 144);
             this.lblMensaje.MinimumSize = new System.Drawing.Size(300, 100);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(300, 100);
@@ -97,13 +97,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(458, 359);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(458, 359);
+            this.MinimumSize = new System.Drawing.Size(458, 359);
             this.Name = "frmFormuMarca";
             this.Text = "frmFormuMarca";
             this.ResumeLayout(false);

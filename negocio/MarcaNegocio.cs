@@ -104,7 +104,7 @@ namespace negocio
 
             try
             {
-                datos.consultaSql("delete from Marca where id = @id");
+                datos.consultaSql("delete from Marcas where id = @id");
                 datos.setearParametros("@id", idMarca);
                 datos.ejecutarAccion();
                 return true;
@@ -126,8 +126,9 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.consultaSql("update Marca set descripcion =@descripcion where id = @id");
+                datos.consultaSql("update Marcas set descripcion =@descripcion where id = @id");
                 datos.setearParametros("@descripcion", marca.Descripcion_Marca);
+                datos.setearParametros("@id",marca.Id_Marca);
                 datos.ejecutarAccion();
 
 

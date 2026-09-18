@@ -39,10 +39,10 @@
             // btnAgregarCate
             // 
             this.btnAgregarCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCate.Location = new System.Drawing.Point(617, 100);
+            this.btnAgregarCate.Location = new System.Drawing.Point(496, 43);
             this.btnAgregarCate.Name = "btnAgregarCate";
-            this.btnAgregarCate.Size = new System.Drawing.Size(156, 37);
-            this.btnAgregarCate.TabIndex = 0;
+            this.btnAgregarCate.Size = new System.Drawing.Size(86, 31);
+            this.btnAgregarCate.TabIndex = 1;
             this.btnAgregarCate.Text = "Agregar";
             this.btnAgregarCate.UseVisualStyleBackColor = true;
             this.btnAgregarCate.Click += new System.EventHandler(this.btnAgregarCate_Click);
@@ -50,10 +50,10 @@
             // btnEliminarCate
             // 
             this.btnEliminarCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarCate.Location = new System.Drawing.Point(617, 208);
+            this.btnEliminarCate.Location = new System.Drawing.Point(496, 152);
             this.btnEliminarCate.Name = "btnEliminarCate";
-            this.btnEliminarCate.Size = new System.Drawing.Size(156, 40);
-            this.btnEliminarCate.TabIndex = 4;
+            this.btnEliminarCate.Size = new System.Drawing.Size(86, 31);
+            this.btnEliminarCate.TabIndex = 2;
             this.btnEliminarCate.Text = "Eliminar";
             this.btnEliminarCate.UseVisualStyleBackColor = true;
             this.btnEliminarCate.Click += new System.EventHandler(this.btnEliminarCate_Click);
@@ -61,10 +61,10 @@
             // btnModificarCate
             // 
             this.btnModificarCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarCate.Location = new System.Drawing.Point(617, 319);
+            this.btnModificarCate.Location = new System.Drawing.Point(496, 263);
             this.btnModificarCate.Name = "btnModificarCate";
-            this.btnModificarCate.Size = new System.Drawing.Size(156, 39);
-            this.btnModificarCate.TabIndex = 5;
+            this.btnModificarCate.Size = new System.Drawing.Size(86, 31);
+            this.btnModificarCate.TabIndex = 3;
             this.btnModificarCate.Text = "Modificar";
             this.btnModificarCate.UseVisualStyleBackColor = true;
             this.btnModificarCate.Click += new System.EventHandler(this.btnModificarCate_Click);
@@ -73,10 +73,10 @@
             // 
             this.btnSalirCate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSalirCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalirCate.Location = new System.Drawing.Point(617, 444);
+            this.btnSalirCate.Location = new System.Drawing.Point(496, 371);
             this.btnSalirCate.Name = "btnSalirCate";
-            this.btnSalirCate.Size = new System.Drawing.Size(156, 42);
-            this.btnSalirCate.TabIndex = 6;
+            this.btnSalirCate.Size = new System.Drawing.Size(86, 31);
+            this.btnSalirCate.TabIndex = 4;
             this.btnSalirCate.Text = "Salir";
             this.btnSalirCate.UseVisualStyleBackColor = false;
             this.btnSalirCate.Click += new System.EventHandler(this.btnSalirCate_Click);
@@ -85,9 +85,11 @@
             // 
             this.pnlContenedorCate.BackColor = System.Drawing.Color.Transparent;
             this.pnlContenedorCate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlContenedorCate.Location = new System.Drawing.Point(25, 71);
+            this.pnlContenedorCate.Location = new System.Drawing.Point(12, 43);
+            this.pnlContenedorCate.MaximumSize = new System.Drawing.Size(458, 359);
+            this.pnlContenedorCate.MinimumSize = new System.Drawing.Size(458, 359);
             this.pnlContenedorCate.Name = "pnlContenedorCate";
-            this.pnlContenedorCate.Size = new System.Drawing.Size(563, 451);
+            this.pnlContenedorCate.Size = new System.Drawing.Size(458, 359);
             this.pnlContenedorCate.TabIndex = 7;
             // 
             // lblTitulo
@@ -95,7 +97,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(227, 19);
+            this.lblTitulo.Location = new System.Drawing.Point(162, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(139, 31);
             this.lblTitulo.TabIndex = 8;
@@ -106,7 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 550);
+            this.ClientSize = new System.Drawing.Size(600, 418);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pnlContenedorCate);
             this.Controls.Add(this.btnSalirCate);
@@ -114,8 +116,8 @@
             this.Controls.Add(this.btnEliminarCate);
             this.Controls.Add(this.btnAgregarCate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(800, 550);
-            this.MinimumSize = new System.Drawing.Size(800, 550);
+            this.MaximumSize = new System.Drawing.Size(600, 418);
+            this.MinimumSize = new System.Drawing.Size(600, 418);
             this.Name = "fmAdmiCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";

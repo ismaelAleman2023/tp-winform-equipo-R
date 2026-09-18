@@ -175,7 +175,7 @@ namespace TPWinForm_equipo_R
             {
                 ptBImagen.Load(imagen);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ptBImagen.Load("https://i.pinimg.com/736x/42/65/d9/4265d9b9ee10196f62e9ac38cafc1a24.jpg");
                 

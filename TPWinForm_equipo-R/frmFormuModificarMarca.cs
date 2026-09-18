@@ -94,6 +94,7 @@ namespace TPWinForm_equipo_R
 
             MarcaNegocio marcaNego = new MarcaNegocio();
 
+
             try
             {
                 marcaActual.Descripcion_Marca = txtDescripcion.Text;
@@ -105,7 +106,7 @@ namespace TPWinForm_equipo_R
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("Error al modificar la marca: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

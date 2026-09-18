@@ -24,8 +24,8 @@ namespace TPWinForm_equipo_R
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
-            pnlContenedorMarca.Controls.Clear();
 
+            pnlContenedorMarca.Controls.Clear();
             frmFormuMarca frm = new frmFormuMarca();
             frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
@@ -56,18 +56,7 @@ namespace TPWinForm_equipo_R
             frmEli.Show();
         }
 
-        private void btnListarMarca_Click(object sender, EventArgs e)
-        {   
-            pnlContenedorMarca.Controls.Clear();
-            frmFormuListarMarca frm = new frmFormuListarMarca();
-            frm.TopLevel = false;
-            frm.Dock = DockStyle.Fill;
-            
-            pnlContenedorMarca.Controls.Add(frm);
-            frm.Show();
-        }
-
-        private void btnSalirMarca_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }

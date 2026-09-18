@@ -41,9 +41,9 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(403, 309);
+            this.btnConfirmar.Location = new System.Drawing.Point(278, 269);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(93, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(86, 31);
             this.btnConfirmar.TabIndex = 0;
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label1.Location = new System.Drawing.Point(235, 33);
+            this.label1.Location = new System.Drawing.Point(83, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(283, 42);
             this.label1.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 126);
+            this.label2.Location = new System.Drawing.Point(79, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(224, 172);
+            this.label3.Location = new System.Drawing.Point(79, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 3;
@@ -81,14 +81,14 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(300, 126);
+            this.txtid.Location = new System.Drawing.Point(155, 116);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(100, 20);
             this.txtid.TabIndex = 4;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(300, 172);
+            this.txtDescripcion.Location = new System.Drawing.Point(155, 162);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 5;
@@ -96,17 +96,17 @@
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(196, 195);
-            this.lblMensaje.MinimumSize = new System.Drawing.Size(300, 100);
+            this.lblMensaje.Location = new System.Drawing.Point(123, 195);
+            this.lblMensaje.MinimumSize = new System.Drawing.Size(250, 60);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(300, 100);
+            this.lblMensaje.Size = new System.Drawing.Size(250, 60);
             this.lblMensaje.TabIndex = 10;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(425, 126);
+            this.btnBuscar.Location = new System.Drawing.Point(280, 116);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(93, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(86, 31);
             this.btnBuscar.TabIndex = 11;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(285, 309);
+            this.btnCancelar.Location = new System.Drawing.Point(82, 269);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(86, 31);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -126,7 +126,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(458, 359);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblMensaje);
@@ -136,6 +137,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConfirmar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(458, 359);
+            this.MinimumSize = new System.Drawing.Size(458, 359);
             this.Name = "frmFormuModificarMarca";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.frmFormuModificarMarca_Load);

@@ -227,9 +227,9 @@
             this.lblIdArt.Location = new System.Drawing.Point(21, 19);
             this.lblIdArt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIdArt.Name = "lblIdArt";
-            this.lblIdArt.Size = new System.Drawing.Size(64, 13);
+            this.lblIdArt.Size = new System.Drawing.Size(54, 13);
             this.lblIdArt.TabIndex = 17;
-            this.lblIdArt.Text = "Cod Articulo";
+            this.lblIdArt.Text = "Id Articulo";
             // 
             // frmArticulo
             // 

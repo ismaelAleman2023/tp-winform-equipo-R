@@ -33,27 +33,29 @@
             this.btnArt = new System.Windows.Forms.Button();
             this.btnMarca = new System.Windows.Forms.Button();
             this.pnlConteCentral = new System.Windows.Forms.Panel();
+            this.lbAdministrar = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lime;
+            this.panel1.Controls.Add(this.btnVolver);
+            this.panel1.Controls.Add(this.lbAdministrar);
             this.panel1.Controls.Add(this.btnCate);
             this.panel1.Controls.Add(this.btnArt);
             this.panel1.Controls.Add(this.btnMarca);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1123, 112);
+            this.panel1.Size = new System.Drawing.Size(704, 105);
             this.panel1.TabIndex = 0;
             // 
             // btnCate
             // 
-            this.btnCate.Location = new System.Drawing.Point(801, 42);
-            this.btnCate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCate.Location = new System.Drawing.Point(552, 56);
             this.btnCate.Name = "btnCate";
-            this.btnCate.Size = new System.Drawing.Size(187, 43);
+            this.btnCate.Size = new System.Drawing.Size(100, 35);
             this.btnCate.TabIndex = 1;
             this.btnCate.Text = "Categoria";
             this.btnCate.UseVisualStyleBackColor = true;
@@ -61,10 +63,9 @@
             // 
             // btnArt
             // 
-            this.btnArt.Location = new System.Drawing.Point(163, 42);
-            this.btnArt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnArt.Location = new System.Drawing.Point(393, 56);
             this.btnArt.Name = "btnArt";
-            this.btnArt.Size = new System.Drawing.Size(187, 43);
+            this.btnArt.Size = new System.Drawing.Size(100, 35);
             this.btnArt.TabIndex = 0;
             this.btnArt.Text = "Articulo";
             this.btnArt.UseVisualStyleBackColor = true;
@@ -72,10 +73,9 @@
             // 
             // btnMarca
             // 
-            this.btnMarca.Location = new System.Drawing.Point(467, 42);
-            this.btnMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMarca.Location = new System.Drawing.Point(224, 56);
             this.btnMarca.Name = "btnMarca";
-            this.btnMarca.Size = new System.Drawing.Size(187, 43);
+            this.btnMarca.Size = new System.Drawing.Size(100, 35);
             this.btnMarca.TabIndex = 0;
             this.btnMarca.Text = "Marca";
             this.btnMarca.UseVisualStyleBackColor = true;
@@ -83,28 +83,47 @@
             // 
             // pnlConteCentral
             // 
-            this.pnlConteCentral.Location = new System.Drawing.Point(29, 129);
-            this.pnlConteCentral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlConteCentral.MaximumSize = new System.Drawing.Size(1067, 677);
-            this.pnlConteCentral.MinimumSize = new System.Drawing.Size(1067, 677);
+            this.pnlConteCentral.Location = new System.Drawing.Point(50, 118);
+            this.pnlConteCentral.MaximumSize = new System.Drawing.Size(600, 418);
+            this.pnlConteCentral.MinimumSize = new System.Drawing.Size(600, 418);
             this.pnlConteCentral.Name = "pnlConteCentral";
-            this.pnlConteCentral.Size = new System.Drawing.Size(1067, 677);
+            this.pnlConteCentral.Size = new System.Drawing.Size(600, 418);
             this.pnlConteCentral.TabIndex = 1;
+            // 
+            // lbAdministrar
+            // 
+            this.lbAdministrar.AutoSize = true;
+            this.lbAdministrar.BackColor = System.Drawing.Color.Transparent;
+            this.lbAdministrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAdministrar.Location = new System.Drawing.Point(255, 18);
+            this.lbAdministrar.Name = "lbAdministrar";
+            this.lbAdministrar.Size = new System.Drawing.Size(203, 31);
+            this.lbAdministrar.TabIndex = 2;
+            this.lbAdministrar.Text = "ADMINISTRAR";
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(52, 56);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(100, 35);
+            this.btnVolver.TabIndex = 3;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // FrmAdminPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 826);
+            this.ClientSize = new System.Drawing.Size(701, 547);
             this.Controls.Add(this.pnlConteCentral);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1067, 677);
             this.Name = "FrmAdminPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdminPrincipal";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -116,5 +135,7 @@
         private System.Windows.Forms.Button btnCate;
         private System.Windows.Forms.Button btnArt;
         private System.Windows.Forms.Button btnMarca;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lbAdministrar;
     }
 }
