@@ -144,7 +144,7 @@ namespace TPWinForm_equipo_R
         }
 
 
-        private void cargarCategoria()
+        public void cargarCategoria()
         {
             CategoriaNegocio catN=new CategoriaNegocio();
             
@@ -154,7 +154,7 @@ namespace TPWinForm_equipo_R
 
         }
 
-        private void cargarMarca()
+        public void cargarMarca()
         {
             MarcaNegocio marcaN= new MarcaNegocio();
             comboMarca.DataSource = marcaN.listarMarcas();

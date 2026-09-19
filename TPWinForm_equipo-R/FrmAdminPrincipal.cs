@@ -52,8 +52,7 @@ namespace TPWinForm_equipo_R
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-           FrmDetalle deta=new FrmDetalle();
-            deta.ShowDialog();
+           
            Close();
         }
     }

@@ -89,6 +89,9 @@ namespace TPWinForm_equipo_R
 
         }
 
-       
+        private void frmIdModificar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

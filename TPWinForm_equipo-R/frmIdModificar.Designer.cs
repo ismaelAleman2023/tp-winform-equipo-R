@@ -37,17 +37,19 @@
             // 
             // txtIdModi
             // 
-            this.txtIdModi.Location = new System.Drawing.Point(135, 126);
+            this.txtIdModi.Location = new System.Drawing.Point(180, 155);
+            this.txtIdModi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIdModi.Name = "txtIdModi";
-            this.txtIdModi.Size = new System.Drawing.Size(169, 20);
+            this.txtIdModi.Size = new System.Drawing.Size(224, 22);
             this.txtIdModi.TabIndex = 1;
             // 
             // btnConfi
             // 
             this.btnConfi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfi.Location = new System.Drawing.Point(295, 267);
+            this.btnConfi.Location = new System.Drawing.Point(393, 329);
+            this.btnConfi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfi.Name = "btnConfi";
-            this.btnConfi.Size = new System.Drawing.Size(86, 31);
+            this.btnConfi.Size = new System.Drawing.Size(115, 38);
             this.btnConfi.TabIndex = 2;
             this.btnConfi.Text = "Confirmar";
             this.btnConfi.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // btnCancelar
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(60, 267);
+            this.btnCancelar.Location = new System.Drawing.Point(80, 329);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(86, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(115, 38);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -67,11 +70,12 @@
             // lblMensajes
             // 
             this.lblMensajes.AutoSize = true;
-            this.lblMensajes.Location = new System.Drawing.Point(109, 172);
-            this.lblMensajes.MaximumSize = new System.Drawing.Size(250, 60);
-            this.lblMensajes.MinimumSize = new System.Drawing.Size(250, 60);
+            this.lblMensajes.Location = new System.Drawing.Point(145, 212);
+            this.lblMensajes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMensajes.MaximumSize = new System.Drawing.Size(333, 74);
+            this.lblMensajes.MinimumSize = new System.Drawing.Size(333, 74);
             this.lblMensajes.Name = "lblMensajes";
-            this.lblMensajes.Size = new System.Drawing.Size(250, 60);
+            this.lblMensajes.Size = new System.Drawing.Size(333, 74);
             this.lblMensajes.TabIndex = 4;
             // 
             // lbIdModificar
@@ -80,28 +84,31 @@
             this.lbIdModificar.BackColor = System.Drawing.Color.Transparent;
             this.lbIdModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIdModificar.ForeColor = System.Drawing.Color.Black;
-            this.lbIdModificar.Location = new System.Drawing.Point(53, 35);
+            this.lbIdModificar.Location = new System.Drawing.Point(71, 43);
+            this.lbIdModificar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIdModificar.Name = "lbIdModificar";
-            this.lbIdModificar.Size = new System.Drawing.Size(348, 39);
+            this.lbIdModificar.Size = new System.Drawing.Size(441, 52);
             this.lbIdModificar.TabIndex = 5;
             this.lbIdModificar.Text = "Ingrese Id a Modificar";
             // 
             // frmIdModificar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(458, 359);
+            this.ClientSize = new System.Drawing.Size(611, 442);
             this.Controls.Add(this.lbIdModificar);
             this.Controls.Add(this.lblMensajes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfi);
             this.Controls.Add(this.txtIdModi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(458, 359);
-            this.MinimumSize = new System.Drawing.Size(458, 359);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(611, 442);
+            this.MinimumSize = new System.Drawing.Size(611, 442);
             this.Name = "frmIdModificar";
             this.Text = "frmIdModificar";
+            this.Load += new System.EventHandler(this.frmIdModificar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

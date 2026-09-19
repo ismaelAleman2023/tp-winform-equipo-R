@@ -16,6 +16,7 @@ namespace TPWinForm_equipo_R
     {
         private Articulo arti=null;
         private Imagen image=null;
+        private frmPrincipal frmP;
 
         public FrmDetalle()
         {
@@ -25,28 +26,32 @@ namespace TPWinForm_equipo_R
 
 
 
-        public FrmDetalle(Articulo art,Imagen ima)
+        public FrmDetalle(Articulo art,Imagen ima, frmPrincipal dataGrid)
         {
             InitializeComponent();
             arti = art;
             image = ima;
+            frmP = dataGrid;
+
         }
 
         private void FrmDetalle_Load(object sender, EventArgs e)
         {
             ImagenNegocio im = new ImagenNegocio();
 
-
             
-                cargarImagen(image.Url_Imagen);
-
-                lblMarca.Text = arti.Marca_Articulo.Descripcion_Marca;
-                lblDescripcion.Text = arti.Categoria_Articulo.Descripcion_Categoria;
-                lblNombre.Text = arti.Nombre_Articulo;
-                lblPrecio.Text = arti.Precio_Articulo.ToString();
-                lblCodArti.Text = arti.Codigo_Articulo;
             
+            cargarImagen(image.Url_Imagen);
 
+            lblMarca.Text = arti.Marca_Articulo.ToString();
+            lblCategoria.Text = arti.Categoria_Articulo.ToString();
+            lblDescripcion.Text = arti.Descripcion_Articulo;
+            
+            lblNombre.Text = arti.Nombre_Articulo;
+            lblPrecio.Text = arti.Precio_Articulo.ToString();
+            lblCodArti.Text = arti.Codigo_Articulo;
+            
+            
 
         }
 
@@ -65,7 +70,14 @@ namespace TPWinForm_equipo_R
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            frmP.dtgListar.Focus();
             Close();
+            
+        }
+
+        private void lblDescripcion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
