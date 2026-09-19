@@ -19,36 +19,68 @@ namespace TPWinForm_equipo_R
 
         private void btnCate_Click(object sender, EventArgs e)
         {
-            pnlConteCentral.Controls.Clear();
-            fmAdmiCategoria AdminCate=new fmAdmiCategoria();
-            AdminCate.TopLevel = false;
-            AdminCate.Dock = DockStyle.Fill;    
-            pnlConteCentral.Controls.Add(AdminCate);
-            AdminCate.Show();
+            try
+            {
+                pnlConteCentral.Controls.Clear();
+                fmAdmiCategoria AdminCate = new fmAdmiCategoria();
+                AdminCate.TopLevel = false;
+                AdminCate.Dock = DockStyle.Fill;
+                pnlConteCentral.Controls.Add(AdminCate);
+                AdminCate.Show();
+
+            }
+            catch(Exception ex) {
+
+                throw ex;
+            
+            }
+            
 
         }
 
         private void btnMarca_Click(object sender, EventArgs e)
         {
-            pnlConteCentral.Controls.Clear();
-            frmAdminMarca adminMarca= new frmAdminMarca();
-            adminMarca.TopLevel=false;
-            adminMarca.Dock = DockStyle.Fill;
-            pnlConteCentral.Controls.Add(adminMarca);
-            adminMarca.Show();
 
+            try {
+                pnlConteCentral.Controls.Clear();
+                frmAdminMarca adminMarca = new frmAdminMarca();
+                adminMarca.TopLevel = false;
+                adminMarca.Dock = DockStyle.Fill;
+                pnlConteCentral.Controls.Add(adminMarca);
+                adminMarca.Show();
+
+
+            }
+            catch (Exception ex) {
+
+                throw ex;
+            
+            }
+           
 
         }
 
         private void btnArt_Click(object sender, EventArgs e)
         {
-            pnlConteCentral.Controls.Clear();
-            frmAdminArticulo adminArt= new frmAdminArticulo();
-            adminArt.TopLevel=false;
-            adminArt.Dock = DockStyle.Fill;
-            pnlConteCentral.Controls.Add(adminArt);
-            adminArt.Show();
+            try
+            {
+                pnlConteCentral.Controls.Clear();
+                frmAdminArticulo adminArt = new frmAdminArticulo();
+                adminArt.TopLevel = false;
+                adminArt.Dock = DockStyle.Fill;
+                pnlConteCentral.Controls.Add(adminArt);
+                adminArt.Show();
+            }
+            catch (Exception ex) 
+            {
+                throw ex;
+            
+            }
+
+                      
         }
+
+
 
         private void btnVolver_Click(object sender, EventArgs e)
         {

@@ -34,43 +34,50 @@ namespace TPWinForm_equipo_R
 
         private async void btnAeptar_Click(object sender, EventArgs e)
         {
-            ArticuloNegocio artN=new ArticuloNegocio();
-
-            if(!int.TryParse(txtArtModifid.Text,out int resultado))
+            try
             {
-                lblMensaje.Text = "Ingrese un número válido";
-                await Task.Delay(3000);
-                lblMensaje.Text = "";
-                return;
+                ArticuloNegocio artN = new ArticuloNegocio();
+
+                if (!int.TryParse(txtArtModifid.Text, out int resultado))
+                {
+                    lblMensaje.Text = "Ingrese un número válido";
+                    await Task.Delay(3000);
+                    lblMensaje.Text = "";
+                    return;
+                }
+
+
+                Articulo art = artN.BuscarId(resultado);
+
+
+                if (art == null)
+                {
+                    lblMensaje.Text = "El id ingresado es incorrecto";
+
+                    await Task.Delay(3000);
+                    txtArtModifid.Text = "";
+                    lblMensaje.Text = "";
+                    return;
+                }
+                ImagenNegocio imgN = new ImagenNegocio();
+
+                Imagen img = imgN.BuscarImagenId(art.Id_Articulo);
+
+
+                frmArticulo pantaArt = new frmArticulo(art, img);
+
+                pantaArt.TopLevel = false;
+                pantaArt.FormBorderStyle = FormBorderStyle.None;
+                pantaArt.Dock = DockStyle.Fill;
+
+                contenedorOriginal.pnlconteArti.Controls.Clear();
+                contenedorOriginal.pnlconteArti.Controls.Add(pantaArt);
+                pantaArt.Show();
             }
-
-
-            Articulo art = artN.BuscarId(resultado);
-
-
-            if(art == null )
-            {
-                lblMensaje.Text = "El id ingresado es incorrecto";
-
-                await Task.Delay(3000);
-                txtArtModifid.Text = "";          
-                lblMensaje.Text="";
-                return;
+            catch (Exception ex) 
+            { 
+                throw ex; 
             }
-            ImagenNegocio imgN = new ImagenNegocio();
-
-            Imagen img = imgN.BuscarImagenId(art.Id_Articulo);
-
-
-            frmArticulo pantaArt = new frmArticulo( art, img);
-
-            pantaArt.TopLevel = false;
-            pantaArt.FormBorderStyle = FormBorderStyle.None;
-            pantaArt.Dock = DockStyle.Fill;
-
-            contenedorOriginal.pnlconteArti.Controls.Clear();
-            contenedorOriginal.pnlconteArti.Controls.Add(pantaArt);
-            pantaArt.Show();
 
 
         }

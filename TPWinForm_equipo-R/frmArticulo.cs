@@ -38,6 +38,40 @@ namespace TPWinForm_equipo_R
         {
             try
             {
+                string mensajeError = "";
+
+                if (string.IsNullOrWhiteSpace(txtCodArt.Text)) { 
+                mensajeError += "- El código del artículo es obligatorio.\n";
+                
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombre.Text)) { 
+                 mensajeError += "- El nombre del artículo es obligatorio.\n";
+
+                }
+
+                if (comboCategoria.SelectedItem == null)
+                { 
+                mensajeError += "- Debes seleccionar una categoría.\n";
+                }
+
+                if (comboMarca.SelectedItem == null) { 
+                mensajeError += "- Debes seleccionar una marca.\n";
+                }
+                if (string.IsNullOrWhiteSpace(txtImagen.Text)) { 
+                 mensajeError += "- La URL de la imagen es obligatoria.\n";
+                }
+                   
+
+                // Si hay algún error, mostramos un solo cartel con todo lo que falta y salimos
+                if (mensajeError != "")
+                {
+                    MessageBox.Show("Por favor, corrige los siguientes errores:\n\n" + mensajeError, "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+
                 ArticuloNegocio artN = new ArticuloNegocio();
                 ImagenNegocio imgN = new ImagenNegocio();
                 Articulo arti = new Articulo();
@@ -47,8 +81,16 @@ namespace TPWinForm_equipo_R
                 {
                     arti.Codigo_Articulo = txtCodArt.Text;
                     arti.Nombre_Articulo = txtNombre.Text;
-                    arti.Precio_Articulo = Convert.ToDecimal(txtPrecio.Text);
-                    arti.Descripcion_Articulo = txtDescripcion.Text;
+
+                    decimal precio = 0;
+                    if (!string.IsNullOrEmpty(txtPrecio.Text))
+                    {
+                        decimal.TryParse(txtPrecio.Text, out precio);
+                    }
+                    arti.Precio_Articulo = precio;
+
+                    // Si la descripción está vacía "", manda null 
+                    arti.Descripcion_Articulo = string.IsNullOrEmpty(txtDescripcion.Text) ? null : txtDescripcion.Text;
 
                     arti.Categoria_Articulo=(Categoria) comboCategoria.SelectedItem;
               
@@ -57,10 +99,9 @@ namespace TPWinForm_equipo_R
                     artN.agregar(arti);
 
                     int aux = artN.ultimoId();
-               
 
-                   img.Url_Imagen = txtImagen.Text;
-                   img.IdArticulo_Imagen = aux;
+                    img.Url_Imagen =txtImagen.Text;
+                    img.IdArticulo_Imagen = aux;
 
                    imgN.agregarImagen(img);
                    MessageBox.Show("agregado correctamente");
@@ -71,8 +112,15 @@ namespace TPWinForm_equipo_R
                     arti.Id_Articulo = articulo.Id_Articulo;
                     arti.Codigo_Articulo = txtCodArt.Text;
                     arti.Nombre_Articulo = txtNombre.Text;
-                    arti.Precio_Articulo = Convert.ToDecimal(txtPrecio.Text);
-                    arti.Descripcion_Articulo = txtDescripcion.Text;
+                    decimal precio = 0;
+                    if (!string.IsNullOrEmpty(txtPrecio.Text))
+                    {
+                        decimal.TryParse(txtPrecio.Text, out precio);
+                    }
+                    arti.Precio_Articulo = precio;
+
+                    // Si la descripción está vacía "", manda null 
+                    arti.Descripcion_Articulo = string.IsNullOrEmpty(txtDescripcion.Text) ? null : txtDescripcion.Text;
 
                     arti.Categoria_Articulo = (Categoria)comboCategoria.SelectedItem;
 
@@ -80,28 +128,32 @@ namespace TPWinForm_equipo_R
 
                     artN.modificar(arti);
 
-                    
-                    string url = txtImagen.Text;
+                  
+                    string url =txtImagen.Text;
                     imgN.modificarImagen(url, articulo.Id_Articulo);
                     MessageBox.Show("Modificado correctamente");
 
                 }
-
+                limpiarCeldas();
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.Message);
+                //throw ex;
             }
 
           
 
-            Close();
+           
 
         }
 
         private void frmArticulo_Load(object sender, EventArgs e)
         {
+
+            try
+            {
             cargarCategoria();
             cargarMarca();
 
@@ -139,6 +191,13 @@ namespace TPWinForm_equipo_R
                 txtCodArt.Focus();
 
             }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
 
           
         }

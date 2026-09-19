@@ -18,8 +18,9 @@ namespace TPWinForm_equipo_R
         }
 
         private void btnAgregarCate_Click(object sender, EventArgs e)
-        { 
-            
+        {
+            try
+            {
             pnlContenedorCate.Controls.Clear();
             frmFormuCategoria frm = new frmFormuCategoria();
           
@@ -29,6 +30,14 @@ namespace TPWinForm_equipo_R
 
             pnlContenedorCate.Controls.Add(frm);
             frm.Show();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+          
         }
 
         private void btnSalirCate_Click(object sender, EventArgs e)
@@ -38,27 +47,34 @@ namespace TPWinForm_equipo_R
 
         private void btnEliminarCate_Click(object sender, EventArgs e)
         {
-           
-
-
+            try { 
             pnlContenedorCate.Controls.Clear();
             frmFormuEliminarCate frmEli=new frmFormuEliminarCate();
             frmEli.TopLevel=false;
             frmEli.Dock = DockStyle.Fill;
             frmEli.FormBorderStyle = FormBorderStyle.None;
             pnlContenedorCate.Controls.Add(frmEli);
-            frmEli.Show();
+            frmEli.Show();}
+            catch (Exception ex) { 
+                throw ex;
+            }
 
         }
 
         private void btnModificarCate_Click(object sender, EventArgs e)
         {
-            pnlContenedorCate.Controls.Clear();
+            try {
+                pnlContenedorCate.Controls.Clear();
             frmIdModificar Modi=new frmIdModificar(this);
             Modi.TopLevel=false;
             Modi.Dock = DockStyle.Fill;
             pnlContenedorCate.Controls.Add((frmIdModificar)Modi);
-            Modi.Show();
+            Modi.Show(); 
+            }
+            catch (Exception ex) { 
+                throw ex;
+            }
+            
 
 
         }

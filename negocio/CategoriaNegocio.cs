@@ -27,8 +27,13 @@ namespace negocio
                 while (datos.Lector.Read())
                 {
                     Categoria aux = new Categoria();
+
+                    
                     aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
-                    aux.Id_Categoria = (int)datos.Lector["id"];
+                   
+                    
+                    aux.Id_Categoria = (int)datos.Lector["id"]; //not null
+
                     listaCategoria.Add(aux);
 
                 }
@@ -115,7 +120,12 @@ namespace negocio
                 {
                     
                     aux.Id_Categoria = idCategoria;
-                    aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
+
+                    if (datos.Lector["descripcion"] is DBNull)
+                    {
+                        aux.Descripcion_Categoria = (string)datos.Lector["descripcion"];
+                    }
+                    
                     return aux;
 
                 }

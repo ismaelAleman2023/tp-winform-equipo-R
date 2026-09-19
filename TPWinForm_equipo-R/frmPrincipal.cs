@@ -66,33 +66,59 @@ namespace TPWinForm_equipo_R
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            ImagenNegocio imgN = new ImagenNegocio();
-            Articulo art = new Articulo();
-            Imagen img = new Imagen();
+            try
+            {
+                ImagenNegocio imgN = new ImagenNegocio();
+                Articulo art = new Articulo();
+                Imagen img = new Imagen();
 
-            art = (Articulo)dtgListar.CurrentRow.DataBoundItem;
-            img = imgN.BuscarImagenId(art.Id_Articulo);
+                art = (Articulo)dtgListar.CurrentRow.DataBoundItem;
+                img = imgN.BuscarImagenId(art.Id_Articulo);
 
-            FrmDetalle deta = new FrmDetalle(art, img, this);
-            deta.ShowDialog();
+                FrmDetalle deta = new FrmDetalle(art, img, this);
+                deta.ShowDialog();
+
+            }
+            catch (Exception ex) 
+            { throw ex;
+            
+            }
         }
 
 
 
         private void rbtnMarca_CheckedChanged(object sender, EventArgs e)
         {
+            try
+            {
             MarcaNegocio marcaN = new MarcaNegocio();
             comboMostrar.DataSource = marcaN.listarMarcas();
             comboMostrar.ValueMember = "Id_Marca";
             comboMostrar.DisplayMember = "Descripcion_Marca";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         private void rbtnCategoria_CheckedChanged(object sender, EventArgs e)
         {
+            try
+            {
             CategoriaNegocio catN = new CategoriaNegocio();
             comboMostrar.DataSource = catN.lista();
             comboMostrar.ValueMember = "Id_Categoria";
             comboMostrar.DisplayMember = "Descripcion_Categoria";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
 
 
@@ -104,6 +130,8 @@ namespace TPWinForm_equipo_R
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
+            try
+            {
             Articulo artiAux = new Articulo();
 
             List<Articulo> listArticulo = cargarLista();
@@ -171,6 +199,13 @@ namespace TPWinForm_equipo_R
 
             cargarDataGrid(listAux);
 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
     }
 }

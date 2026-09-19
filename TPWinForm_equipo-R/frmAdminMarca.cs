@@ -25,17 +25,26 @@ namespace TPWinForm_equipo_R
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
 
-            pnlContenedorMarca.Controls.Clear();
-            frmFormuMarca frm = new frmFormuMarca();
-            frm.TopLevel = false;
-            frm.Dock = DockStyle.Fill;
+            try
+            {
+                pnlContenedorMarca.Controls.Clear();
+                frmFormuMarca frm = new frmFormuMarca();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+
+                pnlContenedorMarca.Controls.Add(frm);
+                frm.Show();
+            }
+            catch(Exception ex) {
+
+                throw ex;
             
-            pnlContenedorMarca.Controls.Add(frm);
-            frm.Show();
+            }
         }
 
         private void btnModificarMarca_Click(object sender, EventArgs e)
-        {   
+        {
+            try { 
             pnlContenedorMarca.Controls.Clear();
             frmFormuModificarMarca frm = new frmFormuModificarMarca();
             frm.TopLevel = false;
@@ -43,10 +52,20 @@ namespace TPWinForm_equipo_R
             
             pnlContenedorMarca.Controls.Add(frm);
             frm.Show();
-        }
+            }
+            catch (Exception ex) 
+            { 
+                throw ex; 
+            }
+            
+          }
 
         private void btnEliminarMarca_Click(object sender, EventArgs e)
-        {   
+        {
+
+
+            try
+            {
             pnlContenedorMarca.Controls.Clear();
             frmFormuEliminarMarca frmEli = new frmFormuEliminarMarca();
             frmEli.TopLevel = false;
@@ -54,6 +73,13 @@ namespace TPWinForm_equipo_R
             
             pnlContenedorMarca.Controls.Add(frmEli);
             frmEli.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

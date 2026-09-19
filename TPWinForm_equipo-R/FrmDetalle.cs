@@ -37,9 +37,9 @@ namespace TPWinForm_equipo_R
 
         private void FrmDetalle_Load(object sender, EventArgs e)
         {
+            try
+            {
             ImagenNegocio im = new ImagenNegocio();
-
-            
             
             cargarImagen(image.Url_Imagen);
 
@@ -50,6 +50,13 @@ namespace TPWinForm_equipo_R
             lblNombre.Text = arti.Nombre_Articulo;
             lblPrecio.Text = arti.Precio_Articulo.ToString();
             lblCodArti.Text = arti.Codigo_Articulo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
             
             
 

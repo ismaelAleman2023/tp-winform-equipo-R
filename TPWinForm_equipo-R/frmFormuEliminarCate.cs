@@ -50,8 +50,8 @@ namespace TPWinForm_equipo_R
             {
                 // se pude poner en una clase util
                 DialogResult respuesta = MessageBox.Show(
-                    "¿Está seguro de eliminar el artículo?",
-                    "Confirmar eliminación",
+                    "¿Esta Categoria esta Asociada a varios Articulos!!",
+                    "¿Está seguro de eliminar esta Categoria?",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                  );
