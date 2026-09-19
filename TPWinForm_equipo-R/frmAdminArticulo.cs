@@ -25,13 +25,22 @@ namespace TPWinForm_equipo_R
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-           
-            frmArticulo fArti = new frmArticulo();
-            fArti.TopLevel = false;
-            fArti.Dock = DockStyle.Fill;
-            pnlconteArti.Controls.Clear();
-            pnlconteArti.Controls.Add(fArti);
-            fArti.Show();
+            try
+            {
+                frmArticulo fArti = new frmArticulo();
+                fArti.TopLevel = false;
+                fArti.Dock = DockStyle.Fill;
+                pnlconteArti.Controls.Clear();
+                pnlconteArti.Controls.Add(fArti);
+                fArti.Show();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -41,24 +50,41 @@ namespace TPWinForm_equipo_R
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
+                frmEliminarArticulo fElimArt = new frmEliminarArticulo();
+                fElimArt.TopLevel = false;
+                fElimArt.Dock = DockStyle.Fill;
+                pnlconteArti.Controls.Clear();
+                pnlconteArti.Controls.Add(fElimArt);
+                fElimArt.Show();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }         
             
-            frmEliminarArticulo fElimArt= new frmEliminarArticulo();
-            fElimArt.TopLevel = false;
-            fElimArt.Dock = DockStyle.Fill;
-            pnlconteArti.Controls.Clear();
-            pnlconteArti.Controls.Add(fElimArt);
-            fElimArt.Show();
+            
         }
 
         private void btnModifical_Click(object sender, EventArgs e)
         {
-            frmModificarIdArt fArtMod = new frmModificarIdArt(this);
-            fArtMod.TopLevel = false;
-            fArtMod.Dock = DockStyle.Fill;
-            pnlconteArti.Controls.Clear();
-            pnlconteArti.Controls.Add(fArtMod);
-            fArtMod.Show();
+            try
+            {
+                frmModificarIdArt fArtMod = new frmModificarIdArt(this);
+                fArtMod.TopLevel = false;
+                fArtMod.Dock = DockStyle.Fill;
+                pnlconteArti.Controls.Clear();
+                pnlconteArti.Controls.Add(fArtMod);
+                fArtMod.Show();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
 
         }
     }

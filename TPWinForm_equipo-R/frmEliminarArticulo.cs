@@ -23,54 +23,65 @@ namespace TPWinForm_equipo_R
         {
             int aux;
 
-            if (int.TryParse(txtidEliminar.Text,out int numero)) {
-                aux = numero;
-            }
-            else
+            try
             {
-                MessageBox.Show("ingrese solo numeros");
-                return;
-            }
-
-            ArticuloNegocio artN = new ArticuloNegocio();
-            Articulo art = artN.BuscarId(aux);
-
-            if (art != null)
-            {
-
-                // se pude poner en una clase util
-                DialogResult respuesta = MessageBox.Show(
-                    "¿Está seguro de eliminar el artículo?",
-                    "Confirmar eliminación",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-);
-                if (respuesta == DialogResult.Yes)
+                if (int.TryParse(txtidEliminar.Text, out int numero))
                 {
-
-                    ImagenNegocio imgN = new ImagenNegocio();
-                   
-
-                    imgN.eliminarImagen(art.Id_Articulo);
-                    
-                    artN.eliminar(aux);
-                    MessageBox.Show("Artículo eliminado correctamente.");
-                    txtidEliminar.Text = "";
+                    aux = numero;
                 }
                 else
                 {
-                    
-                    MessageBox.Show("Eliminacion cancelada.");
-                    txtidEliminar.Text = "";
+                    MessageBox.Show("ingrese solo numeros");
+                    return;
                 }
-            }
-            else
-            {
-                MessageBox.Show("el id ingresado es incorrecto o no existe");
-                txtidEliminar.Text = "";
+
+                ArticuloNegocio artN = new ArticuloNegocio();
+                Articulo art = artN.BuscarId(aux);
+
+                if (art != null)
+                {
+
+                    // se pude poner en una clase util
+                    DialogResult respuesta = MessageBox.Show(
+                        "¿Está seguro de eliminar el artículo?",
+                        "Confirmar eliminación",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+    );
+                    if (respuesta == DialogResult.Yes)
+                    {
+
+                        ImagenNegocio imgN = new ImagenNegocio();
+
+
+                        imgN.eliminarImagen(art.Id_Articulo);
+
+                        artN.eliminar(aux);
+                        MessageBox.Show("Artículo eliminado correctamente.");
+                        txtidEliminar.Text = "";
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Eliminacion cancelada.");
+                        txtidEliminar.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("el id ingresado es incorrecto o no existe");
+                    txtidEliminar.Text = "";
+
+                }
+
 
             }
-           
+            catch (Exception)
+            {
+
+                throw;
+            }
+
             
         }
 
