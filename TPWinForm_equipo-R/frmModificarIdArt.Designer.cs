@@ -37,20 +37,22 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(251, 158);
+            this.btnCancelar.Location = new System.Drawing.Point(335, 194);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAeptar
             // 
-            this.btnAeptar.Location = new System.Drawing.Point(115, 158);
+            this.btnAeptar.Location = new System.Drawing.Point(153, 194);
+            this.btnAeptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAeptar.Name = "btnAeptar";
-            this.btnAeptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAeptar.TabIndex = 2;
+            this.btnAeptar.Size = new System.Drawing.Size(100, 28);
+            this.btnAeptar.TabIndex = 1;
             this.btnAeptar.Text = "aceptar";
             this.btnAeptar.UseVisualStyleBackColor = true;
             this.btnAeptar.Click += new System.EventHandler(this.btnAeptar_Click);
@@ -58,38 +60,42 @@
             // lblartModif
             // 
             this.lblartModif.AutoSize = true;
-            this.lblartModif.Location = new System.Drawing.Point(112, 104);
+            this.lblartModif.Location = new System.Drawing.Point(149, 128);
+            this.lblartModif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblartModif.Name = "lblartModif";
-            this.lblartModif.Size = new System.Drawing.Size(53, 13);
+            this.lblartModif.Size = new System.Drawing.Size(66, 16);
             this.lblartModif.TabIndex = 3;
             this.lblartModif.Text = "Ingrese id";
             // 
             // txtArtModifid
             // 
-            this.txtArtModifid.Location = new System.Drawing.Point(182, 101);
+            this.txtArtModifid.Location = new System.Drawing.Point(243, 124);
+            this.txtArtModifid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtArtModifid.Name = "txtArtModifid";
-            this.txtArtModifid.Size = new System.Drawing.Size(100, 20);
-            this.txtArtModifid.TabIndex = 4;
+            this.txtArtModifid.Size = new System.Drawing.Size(132, 22);
+            this.txtArtModifid.TabIndex = 0;
             // 
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(139, 205);
+            this.lblMensaje.Location = new System.Drawing.Point(185, 252);
+            this.lblMensaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(0, 13);
+            this.lblMensaje.Size = new System.Drawing.Size(0, 16);
             this.lblMensaje.TabIndex = 5;
             // 
             // frmModificarIdArt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 368);
+            this.ClientSize = new System.Drawing.Size(683, 453);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.txtArtModifid);
             this.Controls.Add(this.lblartModif);
             this.Controls.Add(this.btnAeptar);
             this.Controls.Add(this.btnCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmModificarIdArt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "frmModificarIdArt";

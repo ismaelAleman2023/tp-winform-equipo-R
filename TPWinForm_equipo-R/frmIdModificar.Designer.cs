@@ -38,19 +38,19 @@
             // txtIdModi
             // 
             this.txtIdModi.Location = new System.Drawing.Point(180, 155);
-            this.txtIdModi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdModi.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdModi.Name = "txtIdModi";
             this.txtIdModi.Size = new System.Drawing.Size(224, 22);
-            this.txtIdModi.TabIndex = 1;
+            this.txtIdModi.TabIndex = 0;
             // 
             // btnConfi
             // 
             this.btnConfi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfi.Location = new System.Drawing.Point(393, 329);
-            this.btnConfi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfi.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfi.Name = "btnConfi";
             this.btnConfi.Size = new System.Drawing.Size(115, 38);
-            this.btnConfi.TabIndex = 2;
+            this.btnConfi.TabIndex = 1;
             this.btnConfi.Text = "Confirmar";
             this.btnConfi.UseVisualStyleBackColor = true;
             this.btnConfi.Click += new System.EventHandler(this.btnConfi_Click);
@@ -59,10 +59,10 @@
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(80, 329);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 38);
-            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -76,7 +76,7 @@
             this.lblMensajes.MinimumSize = new System.Drawing.Size(333, 74);
             this.lblMensajes.Name = "lblMensajes";
             this.lblMensajes.Size = new System.Drawing.Size(333, 74);
-            this.lblMensajes.TabIndex = 4;
+            this.lblMensajes.TabIndex = 1;
             // 
             // lbIdModificar
             // 
@@ -103,7 +103,7 @@
             this.Controls.Add(this.btnConfi);
             this.Controls.Add(this.txtIdModi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(611, 442);
             this.MinimumSize = new System.Drawing.Size(611, 442);
             this.Name = "frmIdModificar";

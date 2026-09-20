@@ -44,7 +44,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.label1.Location = new System.Drawing.Point(79, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 31);
+            this.label1.Size = new System.Drawing.Size(394, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrador de Marcas";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -56,7 +56,7 @@
             this.btnAgregarMarca.Location = new System.Drawing.Point(493, 44);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(86, 31);
-            this.btnAgregarMarca.TabIndex = 1;
+            this.btnAgregarMarca.TabIndex = 0;
             this.btnAgregarMarca.Text = "AGREGAR";
             this.btnAgregarMarca.UseVisualStyleBackColor = false;
             this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
@@ -67,7 +67,7 @@
             this.btnEliminarMarca.Location = new System.Drawing.Point(493, 144);
             this.btnEliminarMarca.Name = "btnEliminarMarca";
             this.btnEliminarMarca.Size = new System.Drawing.Size(86, 31);
-            this.btnEliminarMarca.TabIndex = 2;
+            this.btnEliminarMarca.TabIndex = 1;
             this.btnEliminarMarca.Text = "ELIMINAR";
             this.btnEliminarMarca.UseVisualStyleBackColor = false;
             this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
@@ -78,7 +78,7 @@
             this.btnModificarMarca.Location = new System.Drawing.Point(493, 254);
             this.btnModificarMarca.Name = "btnModificarMarca";
             this.btnModificarMarca.Size = new System.Drawing.Size(86, 31);
-            this.btnModificarMarca.TabIndex = 3;
+            this.btnModificarMarca.TabIndex = 2;
             this.btnModificarMarca.Text = "MODIFICAR";
             this.btnModificarMarca.UseVisualStyleBackColor = false;
             this.btnModificarMarca.Click += new System.EventHandler(this.btnModificarMarca_Click);
@@ -89,7 +89,7 @@
             this.btnSalir.Location = new System.Drawing.Point(492, 374);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(86, 31);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -105,7 +105,7 @@
             // 
             // frmAdminMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 418);

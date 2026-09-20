@@ -46,17 +46,19 @@
             this.panel1.Controls.Add(this.btnCate);
             this.panel1.Controls.Add(this.btnArt);
             this.panel1.Controls.Add(this.btnMarca);
-            this.panel1.Location = new System.Drawing.Point(-2, 0);
+            this.panel1.Location = new System.Drawing.Point(-3, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(704, 105);
+            this.panel1.Size = new System.Drawing.Size(939, 129);
             this.panel1.TabIndex = 0;
             // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.Red;
-            this.btnVolver.Location = new System.Drawing.Point(52, 56);
+            this.btnVolver.Location = new System.Drawing.Point(69, 69);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(100, 35);
+            this.btnVolver.Size = new System.Drawing.Size(133, 43);
             this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -67,27 +69,30 @@
             this.lbAdministrar.AutoSize = true;
             this.lbAdministrar.BackColor = System.Drawing.Color.Transparent;
             this.lbAdministrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAdministrar.Location = new System.Drawing.Point(246, 17);
+            this.lbAdministrar.Location = new System.Drawing.Point(328, 21);
+            this.lbAdministrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAdministrar.Name = "lbAdministrar";
-            this.lbAdministrar.Size = new System.Drawing.Size(203, 31);
+            this.lbAdministrar.Size = new System.Drawing.Size(255, 39);
             this.lbAdministrar.TabIndex = 2;
             this.lbAdministrar.Text = "ADMINISTRAR";
             // 
             // btnCate
             // 
-            this.btnCate.Location = new System.Drawing.Point(552, 56);
+            this.btnCate.Location = new System.Drawing.Point(736, 69);
+            this.btnCate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCate.Name = "btnCate";
-            this.btnCate.Size = new System.Drawing.Size(100, 35);
-            this.btnCate.TabIndex = 1;
+            this.btnCate.Size = new System.Drawing.Size(133, 43);
+            this.btnCate.TabIndex = 2;
             this.btnCate.Text = "Categoria";
             this.btnCate.UseVisualStyleBackColor = true;
             this.btnCate.Click += new System.EventHandler(this.btnCate_Click);
             // 
             // btnArt
             // 
-            this.btnArt.Location = new System.Drawing.Point(218, 56);
+            this.btnArt.Location = new System.Drawing.Point(291, 69);
+            this.btnArt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnArt.Name = "btnArt";
-            this.btnArt.Size = new System.Drawing.Size(100, 35);
+            this.btnArt.Size = new System.Drawing.Size(133, 43);
             this.btnArt.TabIndex = 0;
             this.btnArt.Text = "Articulo";
             this.btnArt.UseVisualStyleBackColor = true;
@@ -95,32 +100,35 @@
             // 
             // btnMarca
             // 
-            this.btnMarca.Location = new System.Drawing.Point(378, 56);
+            this.btnMarca.Location = new System.Drawing.Point(504, 69);
+            this.btnMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMarca.Name = "btnMarca";
-            this.btnMarca.Size = new System.Drawing.Size(100, 35);
-            this.btnMarca.TabIndex = 0;
+            this.btnMarca.Size = new System.Drawing.Size(133, 43);
+            this.btnMarca.TabIndex = 1;
             this.btnMarca.Text = "Marca";
             this.btnMarca.UseVisualStyleBackColor = true;
             this.btnMarca.Click += new System.EventHandler(this.btnMarca_Click);
             // 
             // pnlConteCentral
             // 
-            this.pnlConteCentral.Location = new System.Drawing.Point(50, 118);
-            this.pnlConteCentral.MaximumSize = new System.Drawing.Size(600, 418);
-            this.pnlConteCentral.MinimumSize = new System.Drawing.Size(600, 418);
+            this.pnlConteCentral.Location = new System.Drawing.Point(67, 145);
+            this.pnlConteCentral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlConteCentral.MaximumSize = new System.Drawing.Size(800, 514);
+            this.pnlConteCentral.MinimumSize = new System.Drawing.Size(800, 514);
             this.pnlConteCentral.Name = "pnlConteCentral";
-            this.pnlConteCentral.Size = new System.Drawing.Size(600, 418);
-            this.pnlConteCentral.TabIndex = 1;
+            this.pnlConteCentral.Size = new System.Drawing.Size(800, 514);
+            this.pnlConteCentral.TabIndex = 0;
             this.pnlConteCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlConteCentral_Paint);
             // 
             // FrmAdminPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 547);
+            this.ClientSize = new System.Drawing.Size(935, 673);
             this.Controls.Add(this.pnlConteCentral);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmAdminPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdminPrincipal";

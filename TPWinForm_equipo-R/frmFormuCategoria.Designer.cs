@@ -45,9 +45,10 @@
             this.lbTituloCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTituloCate.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTituloCate.ForeColor = System.Drawing.Color.Black;
-            this.lbTituloCate.Location = new System.Drawing.Point(73, 42);
+            this.lbTituloCate.Location = new System.Drawing.Point(97, 52);
+            this.lbTituloCate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTituloCate.Name = "lbTituloCate";
-            this.lbTituloCate.Size = new System.Drawing.Size(323, 42);
+            this.lbTituloCate.Size = new System.Drawing.Size(405, 54);
             this.lbTituloCate.TabIndex = 0;
             this.lbTituloCate.Text = "Agregar Categoria";
             this.lbTituloCate.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -56,39 +57,43 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 155);
+            this.label1.Location = new System.Drawing.Point(49, 191);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 25);
+            this.label1.Size = new System.Drawing.Size(172, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Descripcion :";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(172, 159);
+            this.txtDescripcion.Location = new System.Drawing.Point(229, 196);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(155, 20);
-            this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.Size = new System.Drawing.Size(205, 22);
+            this.txtDescripcion.TabIndex = 0;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(281, 272);
-            this.btnConfirmar.MaximumSize = new System.Drawing.Size(86, 31);
-            this.btnConfirmar.MinimumSize = new System.Drawing.Size(86, 31);
+            this.btnConfirmar.Location = new System.Drawing.Point(375, 335);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmar.MaximumSize = new System.Drawing.Size(115, 38);
+            this.btnConfirmar.MinimumSize = new System.Drawing.Size(115, 38);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(86, 31);
-            this.btnConfirmar.TabIndex = 5;
+            this.btnConfirmar.Size = new System.Drawing.Size(115, 38);
+            this.btnConfirmar.TabIndex = 1;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(88, 273);
-            this.btnCancelar.MaximumSize = new System.Drawing.Size(86, 31);
-            this.btnCancelar.MinimumSize = new System.Drawing.Size(86, 31);
+            this.btnCancelar.Location = new System.Drawing.Point(117, 336);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.MaximumSize = new System.Drawing.Size(115, 38);
+            this.btnCancelar.MinimumSize = new System.Drawing.Size(115, 38);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(86, 31);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Size = new System.Drawing.Size(115, 38);
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -97,9 +102,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(130, 114);
+            this.label2.Location = new System.Drawing.Point(173, 140);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 25);
+            this.label2.Size = new System.Drawing.Size(52, 31);
             this.label2.TabIndex = 7;
             this.label2.Text = "Id :";
             // 
@@ -107,27 +113,29 @@
             // 
             this.lblMensajes.AutoSize = true;
             this.lblMensajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblMensajes.Location = new System.Drawing.Point(106, 198);
-            this.lblMensajes.MinimumSize = new System.Drawing.Size(250, 60);
+            this.lblMensajes.Location = new System.Drawing.Point(141, 244);
+            this.lblMensajes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMensajes.MinimumSize = new System.Drawing.Size(333, 74);
             this.lblMensajes.Name = "lblMensajes";
-            this.lblMensajes.Size = new System.Drawing.Size(250, 60);
+            this.lblMensajes.Size = new System.Drawing.Size(333, 74);
             this.lblMensajes.TabIndex = 8;
             // 
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(172, 120);
+            this.txtId.Location = new System.Drawing.Point(229, 148);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(155, 20);
+            this.txtId.Size = new System.Drawing.Size(205, 22);
             this.txtId.TabIndex = 9;
             // 
             // frmFormuCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(458, 359);
+            this.ClientSize = new System.Drawing.Size(611, 442);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblMensajes);
             this.Controls.Add(this.label2);
@@ -137,8 +145,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTituloCate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(458, 359);
-            this.MinimumSize = new System.Drawing.Size(458, 359);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(611, 442);
+            this.MinimumSize = new System.Drawing.Size(611, 442);
             this.Name = "frmFormuCategoria";
             this.Text = "frmFormuCategoria";
             this.Load += new System.EventHandler(this.frmFormuCategoria_Load);

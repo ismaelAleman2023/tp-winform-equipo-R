@@ -105,7 +105,7 @@
             // pbImagen
             // 
             this.pbImagen.Location = new System.Drawing.Point(59, 81);
-            this.pbImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbImagen.Margin = new System.Windows.Forms.Padding(4);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(436, 314);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +131,7 @@
             this.lblMarca.MinimumSize = new System.Drawing.Size(103, 25);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(103, 25);
-            this.lblMarca.TabIndex = 7;
+            this.lblMarca.TabIndex = 4;
             // 
             // lblCategoria
             // 
@@ -169,10 +169,10 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Location = new System.Drawing.Point(284, 564);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(181, 50);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -205,9 +205,8 @@
             this.Controls.Add(this.lblNombreTi);
             this.Controls.Add(this.lblMarcaTi);
             this.Controls.Add(this.lblCodArtiTi);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDetalle";
-            this.Text = "FrmDetalle";
             this.Load += new System.EventHandler(this.FrmDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
