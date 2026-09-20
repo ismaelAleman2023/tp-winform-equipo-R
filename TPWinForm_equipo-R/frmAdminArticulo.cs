@@ -12,9 +12,16 @@ namespace TPWinForm_equipo_R
 {
     public partial class frmAdminArticulo : Form
     {
+        private FrmAdminPrincipal principal;    
         public frmAdminArticulo()
         {
             InitializeComponent();
+        }
+        public frmAdminArticulo(FrmAdminPrincipal prin)
+        {
+            InitializeComponent();
+        principal = prin;
+        
         }
 
         private void frmAdminArticulo_Load(object sender, EventArgs e)
@@ -45,6 +52,22 @@ namespace TPWinForm_equipo_R
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            FrmAdminPrincipal principal = this.ParentForm as FrmAdminPrincipal;
+
+            if (principal != null)
+            {
+               
+                principal.pnlConteCentral.Controls.Clear();
+                frmFormuListar lista = new frmFormuListar();
+                lista.TopLevel = false;
+                lista.Dock = DockStyle.Fill; 
+                principal.pnlConteCentral.Controls.Add(lista);
+                lista.Show();
+
+            }
+
+            Close();
+
             Close();
         }
 

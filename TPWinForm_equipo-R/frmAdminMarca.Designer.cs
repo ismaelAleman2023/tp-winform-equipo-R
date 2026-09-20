@@ -121,6 +121,7 @@
             this.MinimumSize = new System.Drawing.Size(600, 418);
             this.Name = "frmAdminMarca";
             this.Text = "frmAdminMarca";
+            this.Load += new System.EventHandler(this.frmAdminMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

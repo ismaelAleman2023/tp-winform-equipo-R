@@ -12,10 +12,19 @@ namespace TPWinForm_equipo_R
 {
     public partial class fmAdmiCategoria : Form
     {
+        private FrmAdminPrincipal Principal;
+
         public fmAdmiCategoria()
         {
             InitializeComponent();
         }
+
+        public fmAdmiCategoria(FrmAdminPrincipal prin)
+        {
+            InitializeComponent();
+            Principal = prin;
+        }
+
 
         private void btnAgregarCate_Click(object sender, EventArgs e)
         {
@@ -42,6 +51,20 @@ namespace TPWinForm_equipo_R
 
         private void btnSalirCate_Click(object sender, EventArgs e)
         {
+            
+
+            if (Principal != null)
+            {
+                
+                Principal.pnlConteCentral.Controls.Clear();
+                frmFormuListar lista = new frmFormuListar();
+                lista.TopLevel = false;
+                lista.Dock = DockStyle.Fill;
+                Principal.pnlConteCentral.Controls.Add(lista);
+                lista.Show();            
+                        
+            }
+
             Close();
         }
 
@@ -76,6 +99,11 @@ namespace TPWinForm_equipo_R
             }
             
 
+
+        }
+
+        private void fmAdmiCategoria_Load(object sender, EventArgs e)
+        {
 
         }
     }

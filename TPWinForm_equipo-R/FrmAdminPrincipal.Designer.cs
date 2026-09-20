@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lbAdministrar = new System.Windows.Forms.Label();
             this.btnCate = new System.Windows.Forms.Button();
             this.btnArt = new System.Windows.Forms.Button();
             this.btnMarca = new System.Windows.Forms.Button();
             this.pnlConteCentral = new System.Windows.Forms.Panel();
-            this.lbAdministrar = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,28 @@
             this.panel1.Size = new System.Drawing.Size(704, 105);
             this.panel1.TabIndex = 0;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.Red;
+            this.btnVolver.Location = new System.Drawing.Point(52, 56);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(100, 35);
+            this.btnVolver.TabIndex = 3;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // lbAdministrar
+            // 
+            this.lbAdministrar.AutoSize = true;
+            this.lbAdministrar.BackColor = System.Drawing.Color.Transparent;
+            this.lbAdministrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAdministrar.Location = new System.Drawing.Point(246, 17);
+            this.lbAdministrar.Name = "lbAdministrar";
+            this.lbAdministrar.Size = new System.Drawing.Size(203, 31);
+            this.lbAdministrar.TabIndex = 2;
+            this.lbAdministrar.Text = "ADMINISTRAR";
+            // 
             // btnCate
             // 
             this.btnCate.Location = new System.Drawing.Point(552, 56);
@@ -63,7 +85,7 @@
             // 
             // btnArt
             // 
-            this.btnArt.Location = new System.Drawing.Point(393, 56);
+            this.btnArt.Location = new System.Drawing.Point(218, 56);
             this.btnArt.Name = "btnArt";
             this.btnArt.Size = new System.Drawing.Size(100, 35);
             this.btnArt.TabIndex = 0;
@@ -73,7 +95,7 @@
             // 
             // btnMarca
             // 
-            this.btnMarca.Location = new System.Drawing.Point(224, 56);
+            this.btnMarca.Location = new System.Drawing.Point(378, 56);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Size = new System.Drawing.Size(100, 35);
             this.btnMarca.TabIndex = 0;
@@ -89,27 +111,7 @@
             this.pnlConteCentral.Name = "pnlConteCentral";
             this.pnlConteCentral.Size = new System.Drawing.Size(600, 418);
             this.pnlConteCentral.TabIndex = 1;
-            // 
-            // lbAdministrar
-            // 
-            this.lbAdministrar.AutoSize = true;
-            this.lbAdministrar.BackColor = System.Drawing.Color.Transparent;
-            this.lbAdministrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAdministrar.Location = new System.Drawing.Point(255, 18);
-            this.lbAdministrar.Name = "lbAdministrar";
-            this.lbAdministrar.Size = new System.Drawing.Size(203, 31);
-            this.lbAdministrar.TabIndex = 2;
-            this.lbAdministrar.Text = "ADMINISTRAR";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Location = new System.Drawing.Point(52, 56);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(100, 35);
-            this.btnVolver.TabIndex = 3;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.pnlConteCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlConteCentral_Paint);
             // 
             // FrmAdminPrincipal
             // 
@@ -122,6 +124,7 @@
             this.Name = "FrmAdminPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdminPrincipal";
+            this.Load += new System.EventHandler(this.FrmAdminPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -131,11 +134,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnlConteCentral;
         private System.Windows.Forms.Button btnCate;
         private System.Windows.Forms.Button btnArt;
         private System.Windows.Forms.Button btnMarca;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label lbAdministrar;
+        public System.Windows.Forms.Panel pnlConteCentral;
     }
 }

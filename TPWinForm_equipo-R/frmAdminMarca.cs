@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +13,18 @@ namespace TPWinForm_equipo_R
 {
     public partial class frmAdminMarca : Form
     {
+        private FrmAdminPrincipal principal;
         public frmAdminMarca()
         {
             InitializeComponent();
         }
+
+        public frmAdminMarca(FrmAdminPrincipal prin)
+        {
+            InitializeComponent();
+            principal = prin;
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -84,7 +93,26 @@ namespace TPWinForm_equipo_R
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+
+            if (principal != null)
+            {
+
+                principal.pnlConteCentral.Controls.Clear();
+                frmFormuListar lista = new frmFormuListar();
+                lista.TopLevel = false;
+                lista.Dock = DockStyle.Fill;
+                principal.pnlConteCentral.Controls.Add(lista);
+                lista.Show();
+
+            }
+
+            
             Close();
+        }
+
+        private void frmAdminMarca_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

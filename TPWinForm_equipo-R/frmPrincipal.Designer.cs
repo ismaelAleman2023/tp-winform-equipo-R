@@ -53,17 +53,19 @@
             this.pnlBtn.Controls.Add(this.btnAdministrar);
             this.pnlBtn.Controls.Add(this.btnFiltrar);
             this.pnlBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBtn.Location = new System.Drawing.Point(712, 0);
+            this.pnlBtn.Location = new System.Drawing.Point(534, 0);
+            this.pnlBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlBtn.Name = "pnlBtn";
-            this.pnlBtn.Size = new System.Drawing.Size(223, 673);
+            this.pnlBtn.Size = new System.Drawing.Size(167, 547);
             this.pnlBtn.TabIndex = 0;
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Red;
-            this.btnSalir.Location = new System.Drawing.Point(27, 522);
+            this.btnSalir.Location = new System.Drawing.Point(20, 424);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(145, 53);
+            this.btnSalir.Size = new System.Drawing.Size(109, 43);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -71,9 +73,10 @@
             // 
             // btnAdministrar
             // 
-            this.btnAdministrar.Location = new System.Drawing.Point(27, 287);
+            this.btnAdministrar.Location = new System.Drawing.Point(20, 233);
+            this.btnAdministrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdministrar.Name = "btnAdministrar";
-            this.btnAdministrar.Size = new System.Drawing.Size(145, 53);
+            this.btnAdministrar.Size = new System.Drawing.Size(109, 43);
             this.btnAdministrar.TabIndex = 1;
             this.btnAdministrar.Text = "Administrar";
             this.btnAdministrar.UseVisualStyleBackColor = true;
@@ -81,9 +84,10 @@
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(27, 119);
+            this.btnFiltrar.Location = new System.Drawing.Point(20, 97);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(145, 53);
+            this.btnFiltrar.Size = new System.Drawing.Size(109, 43);
             this.btnFiltrar.TabIndex = 0;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -92,9 +96,10 @@
             // rbtnRango
             // 
             this.rbtnRango.AutoSize = true;
-            this.rbtnRango.Location = new System.Drawing.Point(80, 105);
+            this.rbtnRango.Location = new System.Drawing.Point(60, 85);
+            this.rbtnRango.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbtnRango.Name = "rbtnRango";
-            this.rbtnRango.Size = new System.Drawing.Size(93, 20);
+            this.rbtnRango.Size = new System.Drawing.Size(76, 17);
             this.rbtnRango.TabIndex = 4;
             this.rbtnRango.TabStop = true;
             this.rbtnRango.Text = "Por Rango";
@@ -102,42 +107,47 @@
             // 
             // txtDesde
             // 
-            this.txtDesde.Location = new System.Drawing.Point(274, 104);
+            this.txtDesde.Location = new System.Drawing.Point(206, 84);
+            this.txtDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDesde.Name = "txtDesde";
-            this.txtDesde.Size = new System.Drawing.Size(100, 22);
+            this.txtDesde.Size = new System.Drawing.Size(76, 20);
             this.txtDesde.TabIndex = 6;
             // 
             // txtHasta
             // 
-            this.txtHasta.Location = new System.Drawing.Point(462, 104);
+            this.txtHasta.Location = new System.Drawing.Point(346, 84);
+            this.txtHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHasta.Name = "txtHasta";
-            this.txtHasta.Size = new System.Drawing.Size(100, 22);
+            this.txtHasta.Size = new System.Drawing.Size(76, 20);
             this.txtHasta.TabIndex = 7;
             // 
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(209, 107);
+            this.lblDesde.Location = new System.Drawing.Point(157, 87);
+            this.lblDesde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(48, 16);
+            this.lblDesde.Size = new System.Drawing.Size(38, 13);
             this.lblDesde.TabIndex = 8;
             this.lblDesde.Text = "Desde";
             // 
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(403, 107);
+            this.lblHasta.Location = new System.Drawing.Point(302, 87);
+            this.lblHasta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(43, 16);
+            this.lblHasta.Size = new System.Drawing.Size(35, 13);
             this.lblHasta.TabIndex = 9;
             this.lblHasta.Text = "Hasta";
             // 
             // btnDetalle
             // 
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Location = new System.Drawing.Point(204, 575);
+            this.btnDetalle.Location = new System.Drawing.Point(153, 467);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(283, 63);
+            this.btnDetalle.Size = new System.Drawing.Size(212, 51);
             this.btnDetalle.TabIndex = 11;
             this.btnDetalle.Text = "Ver Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
@@ -147,7 +157,8 @@
             // 
             this.dtgListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgListar.ColumnHeadersVisible = false;
-            this.dtgListar.Location = new System.Drawing.Point(60, 230);
+            this.dtgListar.Location = new System.Drawing.Point(45, 187);
+            this.dtgListar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgListar.MultiSelect = false;
             this.dtgListar.Name = "dtgListar";
             this.dtgListar.ReadOnly = true;
@@ -155,15 +166,16 @@
             this.dtgListar.RowHeadersWidth = 51;
             this.dtgListar.RowTemplate.Height = 24;
             this.dtgListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgListar.Size = new System.Drawing.Size(545, 318);
+            this.dtgListar.Size = new System.Drawing.Size(409, 258);
             this.dtgListar.TabIndex = 12;
             // 
             // rbtnMarca
             // 
             this.rbtnMarca.AutoSize = true;
-            this.rbtnMarca.Location = new System.Drawing.Point(227, 183);
+            this.rbtnMarca.Location = new System.Drawing.Point(170, 149);
+            this.rbtnMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbtnMarca.Name = "rbtnMarca";
-            this.rbtnMarca.Size = new System.Drawing.Size(66, 20);
+            this.rbtnMarca.Size = new System.Drawing.Size(55, 17);
             this.rbtnMarca.TabIndex = 2;
             this.rbtnMarca.TabStop = true;
             this.rbtnMarca.Text = "Marca";
@@ -173,9 +185,10 @@
             // rbtnCategoria
             // 
             this.rbtnCategoria.AutoSize = true;
-            this.rbtnCategoria.Location = new System.Drawing.Point(344, 183);
+            this.rbtnCategoria.Location = new System.Drawing.Point(258, 149);
+            this.rbtnCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbtnCategoria.Name = "rbtnCategoria";
-            this.rbtnCategoria.Size = new System.Drawing.Size(87, 20);
+            this.rbtnCategoria.Size = new System.Drawing.Size(70, 17);
             this.rbtnCategoria.TabIndex = 3;
             this.rbtnCategoria.TabStop = true;
             this.rbtnCategoria.Text = "Categoria";
@@ -185,17 +198,19 @@
             // comboMostrar
             // 
             this.comboMostrar.FormattingEnabled = true;
-            this.comboMostrar.Location = new System.Drawing.Point(484, 181);
+            this.comboMostrar.Location = new System.Drawing.Point(363, 147);
+            this.comboMostrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboMostrar.Name = "comboMostrar";
-            this.comboMostrar.Size = new System.Drawing.Size(121, 24);
+            this.comboMostrar.Size = new System.Drawing.Size(92, 21);
             this.comboMostrar.TabIndex = 5;
             // 
             // rbtnTodos
             // 
             this.rbtnTodos.AutoSize = true;
-            this.rbtnTodos.Location = new System.Drawing.Point(81, 183);
+            this.rbtnTodos.Location = new System.Drawing.Point(61, 149);
+            this.rbtnTodos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbtnTodos.Name = "rbtnTodos";
-            this.rbtnTodos.Size = new System.Drawing.Size(103, 20);
+            this.rbtnTodos.Size = new System.Drawing.Size(84, 17);
             this.rbtnTodos.TabIndex = 10;
             this.rbtnTodos.TabStop = true;
             this.rbtnTodos.Text = "Mostrar todo";
@@ -203,9 +218,9 @@
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 673);
+            this.ClientSize = new System.Drawing.Size(701, 547);
             this.ControlBox = false;
             this.Controls.Add(this.txtHasta);
             this.Controls.Add(this.dtgListar);
@@ -219,6 +234,7 @@
             this.Controls.Add(this.rbtnCategoria);
             this.Controls.Add(this.rbtnMarca);
             this.Controls.Add(this.pnlBtn);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";

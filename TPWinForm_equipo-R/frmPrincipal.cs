@@ -29,7 +29,7 @@ namespace TPWinForm_equipo_R
 
         private void btnAdministrar_Click(object sender, EventArgs e)
         {
-            FrmAdminPrincipal frmadministrar = new FrmAdminPrincipal();
+            FrmAdminPrincipal frmadministrar = new FrmAdminPrincipal(this);
             frmadministrar.ShowDialog();
         }
 
@@ -46,11 +46,11 @@ namespace TPWinForm_equipo_R
 
 
 
-        private void cargarDataGrid(List<Articulo> lista)
+        public void cargarDataGrid(List<Articulo> lista)
         {
             dtgListar.DataSource = lista;
 
-            dtgListar.Columns["Id_Articulo"].Visible = false;
+            dtgListar.Columns["Id_Articulo"].HeaderText ="Id";
             dtgListar.Columns["Descripcion_Articulo"].Visible = false;
 
             dtgListar.Columns["Codigo_Articulo"].HeaderText = "Codigo";
@@ -175,6 +175,8 @@ namespace TPWinForm_equipo_R
             }
             else if (rbtnTodos.Checked)
             {
+
+                    comboMostrar.SelectedIndex = -1;
                 listAux = listArticulo;
             }
             else if (rbtnRango.Checked)
@@ -207,5 +209,7 @@ namespace TPWinForm_equipo_R
             }
            
         }
+
+       
     }
 }

@@ -121,6 +121,7 @@
             this.Name = "fmAdmiCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.fmAdmiCategoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -111,11 +111,11 @@
     <EmbeddedResource Include="frmModificarIdArt.resx">
       <DependentUpon>frmModificarIdArt.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="frmFormuListarMarca.cs">
+    <Compile Include="frmFormuListar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFormuListarMarca.Designer.cs">
-      <DependentUpon>frmFormuListarMarca.cs</DependentUpon>
+    <Compile Include="frmFormuListar.Designer.cs">
+      <DependentUpon>frmFormuListar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFormuModificarMarca.cs">
       <SubType>Form</SubType>
@@ -190,8 +190,8 @@
     <EmbeddedResource Include="frmFormuEliminarMarca.resx">
       <DependentUpon>frmFormuEliminarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFormuListarMarca.resx">
-      <DependentUpon>frmFormuListarMarca.cs</DependentUpon>
+    <EmbeddedResource Include="frmFormuListar.resx">
+      <DependentUpon>frmFormuListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormuMarca.resx">
       <DependentUpon>frmFormuMarca.cs</DependentUpon>
