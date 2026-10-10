@@ -16,10 +16,11 @@ namespace TPWinForm_equipo_R
     {
         private Articulo articulo = null;
         private Imagen imagen = null;
+        private bool seModifica;
         public frmArticulo()
         {
             InitializeComponent();
-            
+            seModifica= false;
         }
 
         public frmArticulo(Articulo art, Imagen img)
@@ -27,6 +28,7 @@ namespace TPWinForm_equipo_R
             InitializeComponent();
             this.articulo = art;
             this.imagen = img;
+            seModifica = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -61,8 +63,12 @@ namespace TPWinForm_equipo_R
                 if (string.IsNullOrWhiteSpace(txtImagen.Text)) { 
                  mensajeError += "- La URL de la imagen es obligatoria.\n";
                 }
-                   
 
+                if (string.IsNullOrEmpty(txtPrecio.Text))
+                {
+                 mensajeError += "- El precio no puede estar vacío.\n";
+                }
+              
                 // Si hay algún error, mostramos un solo cartel con todo lo que falta y salimos
                 if (mensajeError != "")
                 {
@@ -70,53 +76,33 @@ namespace TPWinForm_equipo_R
                     return;
                 }
 
-
-
                 ArticuloNegocio artN = new ArticuloNegocio();
                 ImagenNegocio imgN = new ImagenNegocio();
                 Articulo arti = new Articulo();
                 Imagen img = new Imagen();
                 
-                if (articulo == null)
-                {
+                    if(seModifica)
+                    {
+                      arti.Id_Articulo = articulo.Id_Articulo;
+                    }
                     arti.Codigo_Articulo = txtCodArt.Text;
                     arti.Nombre_Articulo = txtNombre.Text;
-
+                   
                     decimal precio = 0;
-                    if (!string.IsNullOrEmpty(txtPrecio.Text))
-                    {
-                        decimal.TryParse(txtPrecio.Text, out precio);
-                    }
-                    arti.Precio_Articulo = precio;
-
-                    // Si la descripción está vacía "", manda null 
-                    arti.Descripcion_Articulo = string.IsNullOrEmpty(txtDescripcion.Text) ? null : txtDescripcion.Text;
-
-                    arti.Categoria_Articulo=(Categoria) comboCategoria.SelectedItem;
-              
-                    arti.Marca_Articulo = (Marca)comboMarca.SelectedItem;
-
-                    artN.agregar(arti);
-
-                    int aux = artN.ultimoId();
-
-                    img.Url_Imagen =txtImagen.Text;
-                    img.IdArticulo_Imagen = aux;
-
-                   imgN.agregarImagen(img);
-                   MessageBox.Show("agregado correctamente");
-
-                }
-                else
-                {
-                    arti.Id_Articulo = articulo.Id_Articulo;
-                    arti.Codigo_Articulo = txtCodArt.Text;
-                    arti.Nombre_Articulo = txtNombre.Text;
-                    decimal precio = 0;
-                    if (!string.IsNullOrEmpty(txtPrecio.Text))
-                    {
-                        decimal.TryParse(txtPrecio.Text, out precio);
-                    }
+                    
+                        if (decimal.TryParse(txtPrecio.Text, out precio))
+                        {
+                            if(precio < 0) { 
+                                MessageBox.Show("El precio no puede ser negativo.");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("solo ingrese numeros en el precio");
+                            return;
+                        }
+                                      
                     arti.Precio_Articulo = precio;
 
                     // Si la descripción está vacía "", manda null 
@@ -126,21 +112,33 @@ namespace TPWinForm_equipo_R
 
                     arti.Marca_Articulo = (Marca)comboMarca.SelectedItem;
 
+                if (seModifica)
+                {
                     artN.modificar(arti);
-
-                  
-                    string url =txtImagen.Text;
+                    string url = txtImagen.Text;
                     imgN.modificarImagen(url, articulo.Id_Articulo);
                     MessageBox.Show("Modificado correctamente");
 
                 }
-                limpiarCeldas();
+                else
+                {
+                    artN.agregar(arti);
+
+                    int aux = artN.ultimoId();
+
+                    img.Url_Imagen = txtImagen.Text;
+                    img.IdArticulo_Imagen = aux;
+
+                    imgN.agregarImagen(img);
+                    MessageBox.Show("agregado correctamente");
+                }
+                    limpiarCeldas();
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
-                //throw ex;
+                MessageBox.Show("ocurrio un problema al intentar guardar el articulo" + ex.Message);
+                
             }
 
           
@@ -154,43 +152,43 @@ namespace TPWinForm_equipo_R
 
             try
             {
-            cargarCategoria();
-            cargarMarca();
+                cargarCategoria();
+                cargarMarca();
 
-            if (articulo != null)
-            {
-                txtIdArt.Text = articulo.Id_Articulo.ToString();
-                txtIdArt.ReadOnly = true;
-                txtIdArt.Enabled = false;
-                txtCodArt.Text= articulo.Codigo_Articulo;
-                txtNombre.Text=articulo.Nombre_Articulo;
-                txtDescripcion.Text=articulo.Descripcion_Articulo;
-                txtPrecio.Text = articulo.Precio_Articulo.ToString();
-
-                if (imagen != null)
+                if (articulo != null)
                 {
-                    txtImagen.Text = imagen.Url_Imagen;
-                    cargarImagen(imagen.Url_Imagen);
+                    txtIdArt.Text = articulo.Id_Articulo.ToString();
+                    txtIdArt.ReadOnly = true;
+                    txtIdArt.Enabled = false;
+                    txtCodArt.Text= articulo.Codigo_Articulo;
+                    txtNombre.Text=articulo.Nombre_Articulo;
+                    txtDescripcion.Text=articulo.Descripcion_Articulo;
+                    txtPrecio.Text = articulo.Precio_Articulo.ToString();
+
+                    if (imagen != null)
+                    {
+                        txtImagen.Text = imagen.Url_Imagen;
+                        cargarImagen(imagen.Url_Imagen);
+                    }
+
+                    comboCategoria.SelectedValue = articulo.Categoria_Articulo.Id_Categoria;
+                    comboMarca.SelectedValue = articulo.Marca_Articulo.Id_Marca;
+                    txtCodArt.Focus();
                 }
+                else
+                {
+                    txtIdArt.Text = "El id se genera solo";
+                    txtIdArt.ReadOnly = true;
+                    txtIdArt.Enabled = false;
 
-                comboCategoria.SelectedValue = articulo.Categoria_Articulo.Id_Categoria;
-                comboMarca.SelectedValue = articulo.Marca_Articulo.Id_Marca;
-                txtCodArt.Focus();
-            }
-            else
-            {
-                txtIdArt.Text = "El id se genera solo";
-                txtIdArt.ReadOnly = true;
-                txtIdArt.Enabled = false;
+                    comboCategoria.SelectedIndex = -1;
+                    comboCategoria.Text = "Seleccione una opción...";
 
-                comboCategoria.SelectedIndex = -1;
-                comboCategoria.Text = "Seleccione una opción...";
+                    comboMarca.SelectedIndex = -1;
+                    comboMarca.Text = "Seleccione una opción...";
+                    txtCodArt.Focus();
 
-                comboMarca.SelectedIndex = -1;
-                comboMarca.Text = "Seleccione una opción...";
-                txtCodArt.Focus();
-
-            }
+                 }
             }
             catch (Exception ex)
             {
