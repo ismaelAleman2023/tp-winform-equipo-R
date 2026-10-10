@@ -75,7 +75,7 @@ namespace TPWinForm_equipo_R
 
                 listaImg = imgN.BuscarImagenesId(art.Id_Articulo);
            
-                FrmDetalle deta = new FrmDetalle(art, img, this);
+                FrmDetalle deta = new FrmDetalle(art, listaImg, this);
                 deta.ShowDialog();
 
             }

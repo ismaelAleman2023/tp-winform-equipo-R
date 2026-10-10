@@ -41,6 +41,9 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblCodArti = new System.Windows.Forms.Label();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.btnAdelante = new System.Windows.Forms.Button();
+            this.lblimgActual = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,10 +107,10 @@
             // 
             // pbImagen
             // 
-            this.pbImagen.Location = new System.Drawing.Point(59, 81);
+            this.pbImagen.Location = new System.Drawing.Point(63, 77);
             this.pbImagen.Margin = new System.Windows.Forms.Padding(4);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(436, 314);
+            this.pbImagen.Size = new System.Drawing.Size(413, 288);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagen.TabIndex = 5;
             this.pbImagen.TabStop = false;
@@ -115,13 +118,12 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(93, 432);
+            this.lblDescripcion.Location = new System.Drawing.Point(60, 452);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.MinimumSize = new System.Drawing.Size(533, 123);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(533, 123);
             this.lblDescripcion.TabIndex = 6;
-            this.lblDescripcion.Click += new System.EventHandler(this.lblDescripcion_Click);
             // 
             // lblMarca
             // 
@@ -168,7 +170,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.Red;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(284, 564);
+            this.btnSalir.Location = new System.Drawing.Point(274, 580);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(181, 50);
@@ -187,11 +189,43 @@
             this.lblCodArti.Size = new System.Drawing.Size(103, 25);
             this.lblCodArti.TabIndex = 12;
             // 
+            // btnAtras
+            // 
+            this.btnAtras.Location = new System.Drawing.Point(208, 385);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(29, 24);
+            this.btnAtras.TabIndex = 13;
+            this.btnAtras.Text = "<";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // btnAdelante
+            // 
+            this.btnAdelante.Location = new System.Drawing.Point(289, 386);
+            this.btnAdelante.Name = "btnAdelante";
+            this.btnAdelante.Size = new System.Drawing.Size(32, 23);
+            this.btnAdelante.TabIndex = 14;
+            this.btnAdelante.Text = ">";
+            this.btnAdelante.UseVisualStyleBackColor = true;
+            this.btnAdelante.Click += new System.EventHandler(this.btnAdelante_Click);
+            // 
+            // lblimgActual
+            // 
+            this.lblimgActual.AutoSize = true;
+            this.lblimgActual.Location = new System.Drawing.Point(255, 389);
+            this.lblimgActual.Name = "lblimgActual";
+            this.lblimgActual.Size = new System.Drawing.Size(14, 16);
+            this.lblimgActual.TabIndex = 15;
+            this.lblimgActual.Text = "1";
+            // 
             // FrmDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 641);
+            this.Controls.Add(this.lblimgActual);
+            this.Controls.Add(this.btnAdelante);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblCodArti);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblPrecio);
@@ -229,5 +263,8 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblCodArti;
+        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.Button btnAdelante;
+        private System.Windows.Forms.Label lblimgActual;
     }
 }
