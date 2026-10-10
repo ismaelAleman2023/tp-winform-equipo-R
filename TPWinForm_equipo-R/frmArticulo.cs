@@ -42,33 +42,33 @@ namespace TPWinForm_equipo_R
             {
                 string mensajeError = "";
 
-                if (string.IsNullOrWhiteSpace(txtCodArt.Text)) { 
-                mensajeError += "- El código del artículo es obligatorio.\n";
-                
+                if (string.IsNullOrWhiteSpace(txtCodArt.Text)) {
+                    mensajeError += "- El código del artículo es obligatorio.\n";
+
                 }
 
-                if (string.IsNullOrWhiteSpace(txtNombre.Text)) { 
-                 mensajeError += "- El nombre del artículo es obligatorio.\n";
+                if (string.IsNullOrWhiteSpace(txtNombre.Text)) {
+                    mensajeError += "- El nombre del artículo es obligatorio.\n";
 
                 }
 
                 if (comboCategoria.SelectedItem == null)
-                { 
-                mensajeError += "- Debes seleccionar una categoría.\n";
+                {
+                    mensajeError += "- Debes seleccionar una categoría.\n";
                 }
 
-                if (comboMarca.SelectedItem == null) { 
-                mensajeError += "- Debes seleccionar una marca.\n";
+                if (comboMarca.SelectedItem == null) {
+                    mensajeError += "- Debes seleccionar una marca.\n";
                 }
-                if (string.IsNullOrWhiteSpace(txtImagen.Text)) { 
-                 mensajeError += "- La URL de la imagen es obligatoria.\n";
+                if (string.IsNullOrWhiteSpace(txtImagen.Text)) {
+                    mensajeError += "- La URL de la imagen es obligatoria.\n";
                 }
 
                 if (string.IsNullOrEmpty(txtPrecio.Text))
                 {
-                 mensajeError += "- El precio no puede estar vacío.\n";
+                    mensajeError += "- El precio no puede estar vacío.\n";
                 }
-              
+
                 // Si hay algún error, mostramos un solo cartel con todo lo que falta y salimos
                 if (mensajeError != "")
                 {
@@ -80,37 +80,37 @@ namespace TPWinForm_equipo_R
                 ImagenNegocio imgN = new ImagenNegocio();
                 Articulo arti = new Articulo();
                 Imagen img = new Imagen();
-                
-                    if(seModifica)
-                    {
-                      arti.Id_Articulo = articulo.Id_Articulo;
+
+                if (seModifica)
+                {
+                    arti.Id_Articulo = articulo.Id_Articulo;
+                }
+                arti.Codigo_Articulo = txtCodArt.Text;
+                arti.Nombre_Articulo = txtNombre.Text;
+
+                decimal precio = 0;
+
+                if (decimal.TryParse(txtPrecio.Text, out precio))
+                {
+                    if (precio < 0) {
+                        MessageBox.Show("El precio no puede ser negativo.");
+                        return;
                     }
-                    arti.Codigo_Articulo = txtCodArt.Text;
-                    arti.Nombre_Articulo = txtNombre.Text;
-                   
-                    decimal precio = 0;
-                    
-                        if (decimal.TryParse(txtPrecio.Text, out precio))
-                        {
-                            if(precio < 0) { 
-                                MessageBox.Show("El precio no puede ser negativo.");
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("solo ingrese numeros en el precio");
-                            return;
-                        }
-                                      
-                    arti.Precio_Articulo = precio;
+                }
+                else
+                {
+                    MessageBox.Show("solo ingrese numeros en el precio");
+                    return;
+                }
 
-                    // Si la descripción está vacía "", manda null 
-                    arti.Descripcion_Articulo = string.IsNullOrEmpty(txtDescripcion.Text) ? null : txtDescripcion.Text;
+                arti.Precio_Articulo = precio;
 
-                    arti.Categoria_Articulo = (Categoria)comboCategoria.SelectedItem;
+                // Si la descripción está vacía "", manda null 
+                arti.Descripcion_Articulo = string.IsNullOrEmpty(txtDescripcion.Text) ? null : txtDescripcion.Text;
 
-                    arti.Marca_Articulo = (Marca)comboMarca.SelectedItem;
+                arti.Categoria_Articulo = (Categoria)comboCategoria.SelectedItem;
+
+                arti.Marca_Articulo = (Marca)comboMarca.SelectedItem;
 
                 if (seModifica)
                 {
@@ -132,19 +132,14 @@ namespace TPWinForm_equipo_R
                     imgN.agregarImagen(img);
                     MessageBox.Show("agregado correctamente");
                 }
-                    limpiarCeldas();
+                limpiarCeldas();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show("ocurrio un problema al intentar guardar el articulo" + ex.Message);
-                
-            }
 
-          
-
-           
-
+            } 
         }
 
         private void frmArticulo_Load(object sender, EventArgs e)
@@ -192,12 +187,9 @@ namespace TPWinForm_equipo_R
             }
             catch (Exception ex)
             {
-
-                throw ex;
-            }
-            
-
-          
+                MessageBox.Show("Ocurrio un problema al cargar el formulario" + ex.Message);
+                Close();
+            }                     
         }
 
 
@@ -246,11 +238,6 @@ namespace TPWinForm_equipo_R
             txtImagen.Text = "";
             txtNombre.Text = "";
             txtPrecio.Text = "";
-
-
-
-        }
-
-      
+        }      
     }
 }
