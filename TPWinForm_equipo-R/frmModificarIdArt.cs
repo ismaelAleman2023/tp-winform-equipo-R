@@ -61,10 +61,9 @@ namespace TPWinForm_equipo_R
                 }
                 ImagenNegocio imgN = new ImagenNegocio();
 
-                Imagen img = imgN.BuscarImagenId(art.Id_Articulo);
+                List<Imagen> listaImg = imgN.BuscarImagenesId(art.Id_Articulo);
 
-
-                frmArticulo pantaArt = new frmArticulo(art, img);
+                frmArticulo pantaArt = new frmArticulo(art, listaImg);
 
                 pantaArt.TopLevel = false;
                 pantaArt.FormBorderStyle = FormBorderStyle.None;

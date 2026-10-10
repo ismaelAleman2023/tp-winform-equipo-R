@@ -17,18 +17,28 @@ namespace TPWinForm_equipo_R
         private Articulo articulo = null;
         private Imagen imagen = null;
         private bool seModifica;
+        List<Imagen> listImgCargadas = new List<Imagen>();
+        private int contadorImagenes = 0;
+        private int actual = 0;
+
         public frmArticulo()
         {
             InitializeComponent();
             seModifica= false;
         }
 
-        public frmArticulo(Articulo art, Imagen img)
+        public frmArticulo(Articulo art, List<Imagen> listaImg)
         {
             InitializeComponent();
             this.articulo = art;
-            this.imagen = img;
+            listImgCargadas = listaImg;
             seModifica = true;
+
+            if (listImgCargadas != null && listImgCargadas.Count > 0)
+            {
+                txtImagen.Text = listImgCargadas[actual].Url_Imagen;
+                cargarImagen(listImgCargadas[actual].Url_Imagen);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -60,8 +70,12 @@ namespace TPWinForm_equipo_R
                 if (comboMarca.SelectedItem == null) {
                     mensajeError += "- Debes seleccionar una marca.\n";
                 }
-                if (string.IsNullOrWhiteSpace(txtImagen.Text)) {
-                    mensajeError += "- La URL de la imagen es obligatoria.\n";
+                
+                if(contadorImagenes== 0)
+                {
+                    if (string.IsNullOrWhiteSpace(txtImagen.Text)) {
+                        mensajeError += "- Debes agregar aunque sea 1 imagen.\n";
+                    }
                 }
 
                 if (string.IsNullOrEmpty(txtPrecio.Text))
@@ -80,7 +94,8 @@ namespace TPWinForm_equipo_R
                 ImagenNegocio imgN = new ImagenNegocio();
                 Articulo arti = new Articulo();
                 Imagen img = new Imagen();
-
+               
+                
                 if (seModifica)
                 {
                     arti.Id_Articulo = articulo.Id_Articulo;
@@ -112,13 +127,22 @@ namespace TPWinForm_equipo_R
 
                 arti.Marca_Articulo = (Marca)comboMarca.SelectedItem;
 
+                // se guarda o actualiza 
                 if (seModifica)
                 {
                     artN.modificar(arti);
-                    string url = txtImagen.Text;
-                    imgN.modificarImagen(url, articulo.Id_Articulo);
-                    MessageBox.Show("Modificado correctamente");
+                    
+                    imgN.eliminarImagen(arti.Id_Articulo);
 
+
+                    foreach (Imagen imagen in listImgCargadas)
+                    {
+                        imagen.IdArticulo_Imagen = arti.Id_Articulo;
+                        imgN.agregarImagen(imagen);
+                    }
+
+                    MessageBox.Show("Modificado correctamente");
+                    
                 }
                 else
                 {
@@ -126,10 +150,13 @@ namespace TPWinForm_equipo_R
 
                     int aux = artN.ultimoId();
 
-                    img.Url_Imagen = txtImagen.Text;
-                    img.IdArticulo_Imagen = aux;
+                    foreach(Imagen imagen in listImgCargadas)
+                    {
+                       
+                        imagen.IdArticulo_Imagen = aux;
+                        imgN.agregarImagen(imagen);
+                    }
 
-                    imgN.agregarImagen(img);
                     MessageBox.Show("agregado correctamente");
                 }
                 limpiarCeldas();
@@ -150,8 +177,11 @@ namespace TPWinForm_equipo_R
                 cargarCategoria();
                 cargarMarca();
 
+                
                 if (articulo != null)
+                   
                 {
+                    
                     txtIdArt.Text = articulo.Id_Articulo.ToString();
                     txtIdArt.ReadOnly = true;
                     txtIdArt.Enabled = false;
@@ -159,12 +189,20 @@ namespace TPWinForm_equipo_R
                     txtNombre.Text=articulo.Nombre_Articulo;
                     txtDescripcion.Text=articulo.Descripcion_Articulo;
                     txtPrecio.Text = articulo.Precio_Articulo.ToString();
+                    
+                             
+                        contadorImagenes = listImgCargadas.Count ;
+                        
+                        lblCont.Text = contadorImagenes.ToString();
+                        lblImagenActual.Text = (1 + actual).ToString();
 
-                    if (imagen != null)
-                    {
-                        txtImagen.Text = imagen.Url_Imagen;
-                        cargarImagen(imagen.Url_Imagen);
-                    }
+                        if (contadorImagenes >= 2)
+                        {
+                          pnlBtnImagenes.Visible = true;
+                        }
+                        pnlContador.Visible = true;
+
+                    
 
                     comboCategoria.SelectedValue = articulo.Categoria_Articulo.Id_Categoria;
                     comboMarca.SelectedValue = articulo.Marca_Articulo.Id_Marca;
@@ -238,6 +276,81 @@ namespace TPWinForm_equipo_R
             txtImagen.Text = "";
             txtNombre.Text = "";
             txtPrecio.Text = "";
-        }      
+
+            listImgCargadas.Clear();
+            contadorImagenes = 0;
+            actual = 0;
+            cargarCategoria();
+            cargarMarca();
+        }
+
+        private void bntAgregarImagen_Click(object sender, EventArgs e)
+        {                       
+            if (string.IsNullOrWhiteSpace(txtImagen.Text))
+            {
+                MessageBox.Show( "- La URL de la imagen es obligatoria.\n");
+                return;
+            }
+
+            listImgCargadas.Add(new Imagen { Url_Imagen = txtImagen.Text });
+
+            cargarImagen(txtImagen.Text);
+
+            MessageBox.Show("Imagen agregada correctamente");
+
+            pnlContador.Visible = true;
+
+            contadorImagenes++; 
+
+            lblCont.Text = contadorImagenes.ToString();
+
+            if (contadorImagenes > 1)
+            {
+                pnlBtnImagenes.Visible = true;
+            }
+            actual = contadorImagenes-1;
+            lblImagenActual.Text = (1+ actual).ToString();
+            txtImagen.Text = "";
+
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            Imagen img = new Imagen();
+            if (actual + 1 <= contadorImagenes - 1)
+            {
+                actual++;
+                lblImagenActual.Text= (1 + actual).ToString();
+                img = listImgCargadas[actual ];
+                txtImagen.Text = img.Url_Imagen;
+                cargarImagen(img.Url_Imagen);
+            }
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            Imagen img = new Imagen();
+            if(actual - 1 >= 0){
+                actual--;
+                lblImagenActual.Text = (1+ actual).ToString();
+                img = listImgCargadas[actual];
+                txtImagen.Text = img.Url_Imagen;
+                cargarImagen(img.Url_Imagen);
+            }
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            listImgCargadas.RemoveAt(actual);
+            contadorImagenes= listImgCargadas.Count;
+            lblCont.Text = contadorImagenes.ToString();
+            txtImagen.Text = listImgCargadas[0].Url_Imagen.ToString();
+            lblImagenActual.Text = "1";
+            actual = 0;
+            cargarImagen(listImgCargadas[0].Url_Imagen.ToString());
+
+
+        }
     }
+
 }

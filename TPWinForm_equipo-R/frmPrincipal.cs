@@ -39,8 +39,6 @@ namespace TPWinForm_equipo_R
 
             rbtnTodos.Checked = true;
             cargarDataGrid(artN.Listar());
-
-
             dtgListar.CurrentCell = dtgListar.Rows[0].Cells[1];
         }
 
@@ -69,12 +67,14 @@ namespace TPWinForm_equipo_R
             try
             {
                 ImagenNegocio imgN = new ImagenNegocio();
+                List<Imagen> listaImg = new List<Imagen>();
                 Articulo art = new Articulo();
                 Imagen img = new Imagen();
 
                 art = (Articulo)dtgListar.CurrentRow.DataBoundItem;
-                img = imgN.BuscarImagenId(art.Id_Articulo);
 
+                listaImg = imgN.BuscarImagenesId(art.Id_Articulo);
+           
                 FrmDetalle deta = new FrmDetalle(art, img, this);
                 deta.ShowDialog();
 
