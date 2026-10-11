@@ -119,14 +119,7 @@ namespace TPWinForm_equipo_R
 
         private void FrmAdminPrincipal_Load(object sender, EventArgs e)
         {
-            pnlConteCentral.Controls.Clear();
-            frmFormuListar listar=new frmFormuListar();
-            listar.TopLevel=false;
-            listar.Dock = DockStyle.Fill;
-            pnlConteCentral.Controls.Add(listar);
-            listar.Show();
-
-
+         
 
         }
 
@@ -135,5 +128,7 @@ namespace TPWinForm_equipo_R
 
 
         }
+
+       
     }
 }

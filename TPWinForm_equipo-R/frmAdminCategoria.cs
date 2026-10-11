@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace TPWinForm_equipo_R
     public partial class fmAdmiCategoria : Form
     {
         private FrmAdminPrincipal Principal;
+        private FrmListaCategoria listcat;
 
         public fmAdmiCategoria()
         {
@@ -30,81 +33,216 @@ namespace TPWinForm_equipo_R
         {
             try
             {
-            pnlContenedorCate.Controls.Clear();
-            frmFormuCategoria frm = new frmFormuCategoria();
-          
-            frm.TopLevel = false;
-            frm.Dock = DockStyle.Fill;
-            frm.FormBorderStyle = FormBorderStyle.None;
+                pnlContenedorCate.Controls.Clear();
+                frmFormuCategoria frm = new frmFormuCategoria(this, listcat);
 
-            pnlContenedorCate.Controls.Add(frm);
-            frm.Show();
+                frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
+                frm.FormBorderStyle = FormBorderStyle.None;
+
+                pnlContenedorCate.Controls.Add(frm);
+                frm.Show();
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine("ERROR EN BOTÓN AGREGAR");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
 
-                throw ex;
+                MessageBox.Show("No se pudo cargar la pantalla de Agregar.",
+                          "Error de Interfaz", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            
-          
+
+
         }
 
         private void btnSalirCate_Click(object sender, EventArgs e)
         {
-            
 
-            if (Principal != null)
+            try
             {
-                
-                Principal.pnlConteCentral.Controls.Clear();
-                frmFormuListar lista = new frmFormuListar();
-                lista.TopLevel = false;
-                lista.Dock = DockStyle.Fill;
-                Principal.pnlConteCentral.Controls.Add(lista);
-                lista.Show();            
-                        
+                if (Principal != null)
+                {
+
+                    Principal.pnlConteCentral.Controls.Clear();
+                    frmFormuListar lista = new frmFormuListar();
+                    lista.TopLevel = false;
+                    lista.Dock = DockStyle.Fill;
+                    Principal.pnlConteCentral.Controls.Add(lista);
+                    lista.Show();
+
+                }
+
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("ERROR INTERFAZ: SALIR");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                MessageBox.Show("No se pudo regresar a la pantalla anterior correctamente.",
+                       "Error de Interfaz", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+
             }
 
-            Close();
         }
 
         private void btnEliminarCate_Click(object sender, EventArgs e)
         {
-            try { 
-            pnlContenedorCate.Controls.Clear();
-            frmFormuEliminarCate frmEli=new frmFormuEliminarCate();
-            frmEli.TopLevel=false;
-            frmEli.Dock = DockStyle.Fill;
-            frmEli.FormBorderStyle = FormBorderStyle.None;
-            pnlContenedorCate.Controls.Add(frmEli);
-            frmEli.Show();}
-            catch (Exception ex) { 
-                throw ex;
+            try
+            {
+
+                if (listcat != null && listcat.dgvCate != null && listcat.dgvCate.CurrentRow != null)
+                {
+
+                    Categoria seleccionada = (Categoria)listcat.dgvCate.CurrentRow.DataBoundItem;
+
+                   
+                    bool asociado = validarArt(seleccionada.Descripcion_Categoria);
+
+                    if (asociado) {
+                        MessageBox.Show("No se puede Eliminar Una categoria que esta asociada a un Articulo");
+                        return;
+                    
+                    }
+
+
+                    DialogResult respuesta = MessageBox.Show($"¿Está seguro de que desea eliminar la categoría '{seleccionada.Descripcion_Categoria}'?",
+                                                             "Confirmar Eliminación",
+                                                             MessageBoxButtons.YesNo,
+                                                             MessageBoxIcon.Question);
+
+
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        CategoriaNegocio catenego = new CategoriaNegocio();
+
+
+                        catenego.eliminarCategoria(seleccionada.Id_Categoria);
+
+                        listcat.cargarLista(catenego.lista());
+
+                        MessageBox.Show("Categoría eliminada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione una categoría de la lista para eliminar.",
+                                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+               
+                System.Diagnostics.Debug.WriteLine("ERROR EN BOTÓN ELIMINAR DIRECTO");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                MessageBox.Show("No se pudo eliminar la categoría seleccionada. Verifique que no esté vinculada a ningún artículo.",
+                                "Error del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (listcat != null && listcat.dgvCate != null)
+                {
+                    listcat.dgvCate.ClearSelection();
+                }
+
             }
 
         }
 
         private void btnModificarCate_Click(object sender, EventArgs e)
         {
-            try {
-                pnlContenedorCate.Controls.Clear();
-            frmIdModificar Modi=new frmIdModificar(this);
-            Modi.TopLevel=false;
-            Modi.Dock = DockStyle.Fill;
-            pnlContenedorCate.Controls.Add((frmIdModificar)Modi);
-            Modi.Show(); 
-            }
-            catch (Exception ex) { 
-                throw ex;
-            }
-            
+            try
+            {
 
+                if (listcat != null && listcat.dgvCate != null && listcat.dgvCate.CurrentRow != null)
+                {
+
+                    Categoria seleccionada = (Categoria)listcat.dgvCate.CurrentRow.DataBoundItem;
+
+                    pnlContenedorCate.Controls.Clear();
+
+
+                    frmFormuCategoria modificar = new frmFormuCategoria(seleccionada, this, listcat);
+                    modificar.TopLevel = false;
+                    modificar.Dock = DockStyle.Fill;
+                    modificar.FormBorderStyle = FormBorderStyle.None;
+
+                    pnlContenedorCate.Controls.Add(modificar);
+                    modificar.BringToFront();
+                    modificar.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione una categoría de la lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("ERROR EN BOTÓN MODIFICAR");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                MessageBox.Show("No se pudo cargar la pantalla.", "Error de Interfaz", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
+
+
+
 
         private void fmAdmiCategoria_Load(object sender, EventArgs e)
         {
+            try
+            {
+                pnlContenedorCate.Controls.Clear();
+
+                listcat = new FrmListaCategoria();
+                listcat.TopLevel = false;
+                listcat.Dock = DockStyle.Fill;
+                pnlContenedorCate.Controls.Add(listcat);
+                listcat.Show();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("ERROR AL CONTENER LA GRILA EN EL PANEL");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                MessageBox.Show("No se pudo inicializar el panel de visualización.",
+                        "Error de Interfaz", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
+
+
 
         }
+
+        private bool validarArt(string nombre)
+        {
+
+            ArticuloNegocio artNego = new ArticuloNegocio();
+            bool aux = false;
+
+            foreach (Articulo art in artNego.Listar())
+            {
+
+                if (art.Categoria_Articulo.Descripcion_Categoria == nombre)
+                {
+
+                    return true;
+
+                }
+
+            }
+
+
+            return false;
+
+
+        }
+
+
     }
 }

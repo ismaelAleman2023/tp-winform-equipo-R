@@ -83,6 +83,12 @@
     <Compile Include="frmEliminarArticulo.Designer.cs">
       <DependentUpon>frmEliminarArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaCategoria.Designer.cs">
+      <DependentUpon>FrmListaCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModificarIdArt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEliminarArticulo.resx">
       <DependentUpon>frmEliminarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaCategoria.resx">
+      <DependentUpon>FrmListaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarIdArt.resx">
       <DependentUpon>frmModificarIdArt.cs</DependentUpon>
@@ -147,12 +156,6 @@
     <Compile Include="frmFormuCategoria.Designer.cs">
       <DependentUpon>frmFormuCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFormuEliminarCate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFormuEliminarCate.Designer.cs">
-      <DependentUpon>frmFormuEliminarCate.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmFormuEliminarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,12 +167,6 @@
     </Compile>
     <Compile Include="frmFormuMarca.Designer.cs">
       <DependentUpon>frmFormuMarca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmIdModificar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmIdModificar.Designer.cs">
-      <DependentUpon>frmIdModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="frmAdminCategoria.resx">
@@ -184,9 +181,6 @@
     <EmbeddedResource Include="frmFormuCategoria.resx">
       <DependentUpon>frmFormuCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFormuEliminarCate.resx">
-      <DependentUpon>frmFormuEliminarCate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmFormuEliminarMarca.resx">
       <DependentUpon>frmFormuEliminarMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,9 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormuModificarMarca.resx">
       <DependentUpon>frmFormuModificarMarca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmIdModificar.resx">
-      <DependentUpon>frmIdModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
