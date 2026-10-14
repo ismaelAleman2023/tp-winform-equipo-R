@@ -117,6 +117,7 @@
             this.MinimumSize = new System.Drawing.Size(611, 442);
             this.Name = "frmFormuMarca";
             this.Text = "frmFormuMarca";
+            this.Load += new System.EventHandler(this.frmFormuMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -89,6 +89,7 @@
     <Compile Include="FrmListaCategoria.Designer.cs">
       <DependentUpon>FrmListaCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListaMarca.cs" />
     <Compile Include="frmModificarIdArt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,12 +127,6 @@
     <Compile Include="frmFormuListar.Designer.cs">
       <DependentUpon>frmFormuListar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFormuModificarMarca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFormuModificarMarca.Designer.cs">
-      <DependentUpon>frmFormuModificarMarca.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAdminCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,12 +151,6 @@
     <Compile Include="frmFormuCategoria.Designer.cs">
       <DependentUpon>frmFormuCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFormuEliminarMarca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFormuEliminarMarca.Designer.cs">
-      <DependentUpon>frmFormuEliminarMarca.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmFormuMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,17 +170,11 @@
     <EmbeddedResource Include="frmFormuCategoria.resx">
       <DependentUpon>frmFormuCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFormuEliminarMarca.resx">
-      <DependentUpon>frmFormuEliminarMarca.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmFormuListar.resx">
       <DependentUpon>frmFormuListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormuMarca.resx">
       <DependentUpon>frmFormuMarca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFormuModificarMarca.resx">
-      <DependentUpon>frmFormuModificarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
