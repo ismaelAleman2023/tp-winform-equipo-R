@@ -63,7 +63,7 @@
             this.lblMarcaTi.AutoSize = true;
             this.lblMarcaTi.BackColor = System.Drawing.Color.Transparent;
             this.lblMarcaTi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcaTi.Location = new System.Drawing.Point(541, 75);
+            this.lblMarcaTi.Location = new System.Drawing.Point(520, 75);
             this.lblMarcaTi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarcaTi.Name = "lblMarcaTi";
             this.lblMarcaTi.Size = new System.Drawing.Size(94, 31);
@@ -74,7 +74,7 @@
             // 
             this.lblNombreTi.AutoSize = true;
             this.lblNombreTi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreTi.Location = new System.Drawing.Point(533, 271);
+            this.lblNombreTi.Location = new System.Drawing.Point(512, 271);
             this.lblNombreTi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreTi.MaximumSize = new System.Drawing.Size(124, 31);
             this.lblNombreTi.MinimumSize = new System.Drawing.Size(124, 31);
@@ -87,7 +87,7 @@
             // 
             this.lblPrecioTi.AutoSize = true;
             this.lblPrecioTi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioTi.Location = new System.Drawing.Point(540, 363);
+            this.lblPrecioTi.Location = new System.Drawing.Point(519, 363);
             this.lblPrecioTi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecioTi.Name = "lblPrecioTi";
             this.lblPrecioTi.Size = new System.Drawing.Size(97, 31);
@@ -98,7 +98,7 @@
             // 
             this.lblCategoriaTi.AutoSize = true;
             this.lblCategoriaTi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaTi.Location = new System.Drawing.Point(519, 174);
+            this.lblCategoriaTi.Location = new System.Drawing.Point(498, 174);
             this.lblCategoriaTi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoriaTi.Name = "lblCategoriaTi";
             this.lblCategoriaTi.Size = new System.Drawing.Size(141, 31);
@@ -118,7 +118,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(60, 452);
+            this.lblDescripcion.Location = new System.Drawing.Point(60, 453);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.MinimumSize = new System.Drawing.Size(533, 123);
             this.lblDescripcion.Name = "lblDescripcion";
@@ -128,7 +128,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(541, 126);
+            this.lblMarca.Location = new System.Drawing.Point(520, 126);
             this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarca.MinimumSize = new System.Drawing.Size(103, 25);
             this.lblMarca.Name = "lblMarca";
@@ -138,7 +138,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(543, 228);
+            this.lblCategoria.Location = new System.Drawing.Point(522, 228);
             this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoria.MinimumSize = new System.Drawing.Size(103, 25);
             this.lblCategoria.Name = "lblCategoria";
@@ -148,7 +148,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(543, 321);
+            this.lblNombre.Location = new System.Drawing.Point(522, 321);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.MinimumSize = new System.Drawing.Size(103, 25);
             this.lblNombre.Name = "lblNombre";
@@ -158,7 +158,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(543, 407);
+            this.lblPrecio.Location = new System.Drawing.Point(522, 407);
             this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecio.MinimumSize = new System.Drawing.Size(103, 25);
             this.lblPrecio.Name = "lblPrecio";
@@ -201,7 +201,7 @@
             // 
             // btnAdelante
             // 
-            this.btnAdelante.Location = new System.Drawing.Point(289, 386);
+            this.btnAdelante.Location = new System.Drawing.Point(289, 385);
             this.btnAdelante.Name = "btnAdelante";
             this.btnAdelante.Size = new System.Drawing.Size(32, 23);
             this.btnAdelante.TabIndex = 14;
@@ -239,6 +239,7 @@
             this.Controls.Add(this.lblNombreTi);
             this.Controls.Add(this.lblMarcaTi);
             this.Controls.Add(this.lblCodArtiTi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDetalle";
             this.Load += new System.EventHandler(this.FrmDetalle_Load);

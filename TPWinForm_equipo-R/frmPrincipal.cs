@@ -40,6 +40,7 @@ namespace TPWinForm_equipo_R
             rbtnTodos.Checked = true;
             cargarDataGrid(artN.Listar());
             dtgListar.CurrentCell = dtgListar.Rows[0].Cells[1];
+            dtgListar.EnableHeadersVisualStyles= false;
         }
 
 

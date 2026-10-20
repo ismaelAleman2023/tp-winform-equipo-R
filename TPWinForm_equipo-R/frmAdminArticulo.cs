@@ -26,7 +26,21 @@ namespace TPWinForm_equipo_R
 
         private void frmAdminArticulo_Load(object sender, EventArgs e)
         {
+            try
+            {
+                pnlconteArti.Controls.Clear();
+                frmArt frart= new frmArt();
+                frart.TopLevel = false;
+                frart.Dock = DockStyle.Fill;
+                pnlconteArti.Controls.Add(frart);
+                frart.Show();
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar la grilla de articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
 
         }
 

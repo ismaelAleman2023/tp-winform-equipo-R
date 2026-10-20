@@ -119,7 +119,23 @@ namespace TPWinForm_equipo_R
 
         private void FrmAdminPrincipal_Load(object sender, EventArgs e)
         {
-         
+            try
+            {
+                pnlConteCentral.Controls.Clear();
+                frmAdminArticulo adminArt = new frmAdminArticulo(this);
+                adminArt.TopLevel = false;
+                adminArt.Dock = DockStyle.Fill;
+                pnlConteCentral.Controls.Add(adminArt);
+                adminArt.Show();
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("Error al cargar el formulario de administración de artículos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
+
+
 
         }
 

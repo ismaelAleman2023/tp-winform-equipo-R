@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmArt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmArt.Designer.cs">
+      <DependentUpon>frmArt.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdminArticulo.cs">
       <SubType>Form</SubType>
@@ -89,7 +89,9 @@
     <Compile Include="FrmListaCategoria.Designer.cs">
       <DependentUpon>FrmListaCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListaMarca.cs" />
+    <Compile Include="FrmListaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmModificarIdArt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +107,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdminArticulo.resx">
       <DependentUpon>frmAdminArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArt.resx">
+      <DependentUpon>frmArt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArticulo.resx">
       <DependentUpon>frmArticulo.cs</DependentUpon>

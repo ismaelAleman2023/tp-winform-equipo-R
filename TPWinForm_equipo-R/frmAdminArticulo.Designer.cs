@@ -32,26 +32,25 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModifical = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pnlconteArti
             // 
             this.pnlconteArti.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pnlconteArti.Location = new System.Drawing.Point(11, 35);
-            this.pnlconteArti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnlconteArti.MaximumSize = new System.Drawing.Size(458, 359);
-            this.pnlconteArti.MinimumSize = new System.Drawing.Size(458, 359);
+            this.pnlconteArti.Location = new System.Drawing.Point(15, 43);
+            this.pnlconteArti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlconteArti.MaximumSize = new System.Drawing.Size(611, 442);
+            this.pnlconteArti.MinimumSize = new System.Drawing.Size(611, 442);
             this.pnlconteArti.Name = "pnlconteArti";
-            this.pnlconteArti.Size = new System.Drawing.Size(458, 359);
+            this.pnlconteArti.Size = new System.Drawing.Size(611, 442);
             this.pnlconteArti.TabIndex = 0;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(494, 64);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(659, 126);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(86, 31);
+            this.btnAgregar.Size = new System.Drawing.Size(115, 38);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -59,10 +58,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(494, 150);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(659, 232);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(86, 31);
+            this.btnEliminar.Size = new System.Drawing.Size(115, 38);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -70,41 +69,29 @@
             // 
             // btnModifical
             // 
-            this.btnModifical.Location = new System.Drawing.Point(494, 235);
-            this.btnModifical.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifical.Location = new System.Drawing.Point(659, 336);
+            this.btnModifical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModifical.Name = "btnModifical";
-            this.btnModifical.Size = new System.Drawing.Size(86, 31);
+            this.btnModifical.Size = new System.Drawing.Size(115, 38);
             this.btnModifical.TabIndex = 3;
             this.btnModifical.Text = "Modificar";
             this.btnModifical.UseVisualStyleBackColor = true;
             this.btnModifical.Click += new System.EventHandler(this.btnModifical_Click);
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(494, 362);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(86, 31);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // frmAdminArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(600, 418);
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(800, 514);
             this.Controls.Add(this.btnModifical);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pnlconteArti);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximumSize = new System.Drawing.Size(600, 418);
-            this.MinimumSize = new System.Drawing.Size(600, 418);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(800, 514);
+            this.MinimumSize = new System.Drawing.Size(800, 514);
             this.Name = "frmAdminArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdminArticulo";
@@ -117,7 +104,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModifical;
-        private System.Windows.Forms.Button btnSalir;
         public System.Windows.Forms.Panel pnlconteArti;
     }
 }
