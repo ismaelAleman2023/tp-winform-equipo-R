@@ -77,12 +77,6 @@
     <Compile Include="FrmDetalle.Designer.cs">
       <DependentUpon>FrmDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEliminarArticulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEliminarArticulo.Designer.cs">
-      <DependentUpon>frmEliminarArticulo.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmListaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +85,6 @@
     </Compile>
     <Compile Include="FrmListaMarca.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmModificarIdArt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmModificarIdArt.Designer.cs">
-      <DependentUpon>frmModificarIdArt.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -117,14 +105,8 @@
     <EmbeddedResource Include="FrmDetalle.resx">
       <DependentUpon>FrmDetalle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEliminarArticulo.resx">
-      <DependentUpon>frmEliminarArticulo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmListaCategoria.resx">
       <DependentUpon>FrmListaCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmModificarIdArt.resx">
-      <DependentUpon>frmModificarIdArt.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="frmFormuListar.cs">
       <SubType>Form</SubType>

@@ -21,6 +21,7 @@ namespace TPWinForm_equipo_R
         private int contadorImagenes = 0;
         private int actual = 0;
         public event EventHandler Cancelado;
+        public event EventHandler Guardado;
 
         public frmArticulo()
         {
@@ -181,7 +182,11 @@ namespace TPWinForm_equipo_R
 
                     MessageBox.Show("agregado correctamente");
                 }
-                limpiarCeldas();
+
+
+                Guardado?.Invoke(this, EventArgs.Empty);
+                Close();
+              
             }
             catch (Exception ex)
             {

@@ -92,15 +92,15 @@ namespace TPWinForm_equipo_R
         {
             try
             {
-            MarcaNegocio marcaN = new MarcaNegocio();
-            comboMostrar.DataSource = marcaN.listarMarcas();
-            comboMostrar.ValueMember = "Id_Marca";
-            comboMostrar.DisplayMember = "Descripcion_Marca";
+                comboMostrar.Enabled = true;
+                MarcaNegocio marcaN = new MarcaNegocio();
+                comboMostrar.DataSource = marcaN.listarMarcas();
+                comboMostrar.ValueMember = "Id_Marca";
+                comboMostrar.DisplayMember = "Descripcion_Marca";
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                MessageBox.Show("Error al cargar marcas: " + ex.Message);
             }
             
         }
@@ -109,6 +109,7 @@ namespace TPWinForm_equipo_R
         {
             try
             {
+            comboMostrar.Enabled = true;
             CategoriaNegocio catN = new CategoriaNegocio();
             comboMostrar.DataSource = catN.lista();
             comboMostrar.ValueMember = "Id_Categoria";
@@ -116,8 +117,7 @@ namespace TPWinForm_equipo_R
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                MessageBox.Show("Error al cargar categorias: " + ex.Message);
             }
            
         }
@@ -133,74 +133,75 @@ namespace TPWinForm_equipo_R
         {
             try
             {
-            Articulo artiAux = new Articulo();
+                Articulo artiAux = new Articulo();
 
-            List<Articulo> listArticulo = cargarLista();
-            List<Articulo> listAux = new List<Articulo>();
+                List<Articulo> listArticulo = cargarLista();
+                List<Articulo> listAux = new List<Articulo>();
 
-            if (rbtnCategoria.Checked)
-            {             
-                artiAux.Categoria_Articulo = (Categoria)comboMostrar.SelectedItem;
-                string nombre = artiAux.Categoria_Articulo.ToString(); ;
+                if (rbtnCategoria.Checked)
+                {             
+                   
+                    artiAux.Categoria_Articulo = (Categoria)comboMostrar.SelectedItem;
+                    string nombre = artiAux.Categoria_Articulo.ToString(); ;
 
-                if(nombre != "")
-                {
+                    if(nombre != "")
+                    {
 
-                 listAux = listArticulo.FindAll(arte => arte.Categoria_Articulo.ToString() == nombre);
+                     listAux = listArticulo.FindAll(arte => arte.Categoria_Articulo.ToString() == nombre);
+                    }
+                   else
+                    {
+                        MessageBox.Show("seleccione una categoria");
+                        return;
+                    }
                 }
-               else
-                {
-                    MessageBox.Show("seleccione una categoria");
-                    return;
-                }
-            }
             
-
-
-            else if(rbtnMarca.Checked)
-            {
-                artiAux.Marca_Articulo = (Marca)comboMostrar.SelectedItem;
-                string nombre = artiAux.Marca_Articulo.ToString();
-                if(nombre != "") 
+                else if(rbtnMarca.Checked)
                 {
-                 listAux = listArticulo.FindAll(marca => marca.Marca_Articulo.ToString() == nombre);
-                }
-                else
-                {
-                    MessageBox.Show("seleccione una Marca");
-                    return;
-                }
+                    
+                    artiAux.Marca_Articulo = (Marca)comboMostrar.SelectedItem;
+                    string nombre = artiAux.Marca_Articulo.ToString();
+                    if(nombre != "") 
+                    {
+                     listAux = listArticulo.FindAll(marca => marca.Marca_Articulo.ToString() == nombre);
+                    }
+                    else
+                    {
+                        MessageBox.Show("seleccione una Marca");
+                        return;
+                    }
 
                
 
-            }
-            else if (rbtnTodos.Checked)
-            {
-
-                    comboMostrar.SelectedIndex = -1;
-                listAux = listArticulo;
-            }
-            else if (rbtnRango.Checked)
-            {
-                
-                if(!int.TryParse(txtDesde.Text,out int desde)|| !int.TryParse(txtHasta.Text, out int hasta))
-                {
-                    MessageBox.Show("solo ingrese numeros");
-                    return;
                 }
-
-                foreach (Articulo art in listArticulo)
+                else if (rbtnTodos.Checked)
                 {
-                    if (art.Precio_Articulo >= desde && art.Precio_Articulo <= hasta)
+
+                   
+                    listAux = listArticulo;
+                }
+                else if (rbtnRango.Checked)
+                {
+                  
+
+                    if (!int.TryParse(txtDesde.Text,out int desde)|| !int.TryParse(txtHasta.Text, out int hasta))
                     {
-                        listAux.Add(art);
+                        MessageBox.Show("solo ingrese numeros");
+                        return;
+                    }
+
+                    foreach (Articulo art in listArticulo)
+                    {
+                        if (art.Precio_Articulo >= desde && art.Precio_Articulo <= hasta)
+                        {
+                            listAux.Add(art);
+                        }
+
                     }
 
                 }
 
-            }
-
-            cargarDataGrid(listAux);
+                cargarDataGrid(listAux);
 
             }
             catch (Exception ex)
@@ -211,6 +212,22 @@ namespace TPWinForm_equipo_R
            
         }
 
-       
+        private void limpiarCombo()
+        {
+            comboMostrar.DataSource = null;
+            comboMostrar.Items.Clear();
+            comboMostrar.SelectedIndex = -1;
+            comboMostrar.Enabled = false;
+        }
+
+        private void rbtnTodos_CheckedChanged(object sender, EventArgs e)
+        {
+          limpiarCombo();
+        }
+
+        private void rbtnRango_CheckedChanged(object sender, EventArgs e)
+        {
+            limpiarCombo();
+        }
     }
 }

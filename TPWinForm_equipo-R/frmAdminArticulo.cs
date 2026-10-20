@@ -56,6 +56,26 @@ namespace TPWinForm_equipo_R
             try
             {
                 frmArticulo fArti = new frmArticulo();
+
+                fArti.Cancelado += (s, args) => {
+                    pnlconteArti.Controls.Clear();
+                    frArt = new frmArt();
+                    frArt.TopLevel = false;
+                    frArt.Dock = DockStyle.Fill;
+                    pnlconteArti.Controls.Add(frArt);
+                    frArt.Show();
+                };
+
+                fArti.Guardado += (s, args) => {
+                    pnlconteArti.Controls.Clear();
+                    frArt = new frmArt();
+                    frArt.TopLevel = false;
+                    frArt.Dock = DockStyle.Fill;
+                    pnlconteArti.Controls.Add(frArt);
+                    frArt.Show();
+                };
+
+
                 fArti.TopLevel = false;
                 fArti.Dock = DockStyle.Fill;
                 pnlconteArti.Controls.Clear();
@@ -121,7 +141,6 @@ namespace TPWinForm_equipo_R
         {
             try
             {
-
                 ArticuloNegocio artN = new ArticuloNegocio();
 
                 Articulo artiSelect = (Articulo)frArt.dtgArticulos.CurrentRow.DataBoundItem;
@@ -142,6 +161,17 @@ namespace TPWinForm_equipo_R
                     frArt.Show();
                 };
 
+
+                pantaArt.Guardado += (s, args) => {
+                    pnlconteArti.Controls.Clear();
+                    frArt = new frmArt();
+                    frArt.TopLevel = false;
+                    frArt.Dock = DockStyle.Fill;
+                    pnlconteArti.Controls.Add(frArt);
+                    frArt.Show();
+                };
+
+
                 pantaArt.TopLevel = false;
                 pantaArt.FormBorderStyle = FormBorderStyle.None;
                 pantaArt.Dock = DockStyle.Fill;
@@ -149,7 +179,6 @@ namespace TPWinForm_equipo_R
                 pnlconteArti.Controls.Clear();
                 pnlconteArti.Controls.Add(pantaArt);
                 pantaArt.Show();
-
                               
             }
             catch (Exception ex)
@@ -157,8 +186,6 @@ namespace TPWinForm_equipo_R
 
                 throw ex;
             }
-            
-
         }
     }
 }

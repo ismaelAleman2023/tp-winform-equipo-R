@@ -118,7 +118,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(60, 453);
+            this.lblDescripcion.Location = new System.Drawing.Point(13, 432);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.MinimumSize = new System.Drawing.Size(533, 123);
             this.lblDescripcion.Name = "lblDescripcion";
@@ -170,7 +170,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.Red;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(274, 580);
+            this.btnSalir.Location = new System.Drawing.Point(241, 567);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(181, 50);
@@ -182,7 +182,7 @@
             // lblCodArti
             // 
             this.lblCodArti.AutoSize = true;
-            this.lblCodArti.Location = new System.Drawing.Point(165, 31);
+            this.lblCodArti.Location = new System.Drawing.Point(164, 35);
             this.lblCodArti.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodArti.MinimumSize = new System.Drawing.Size(103, 25);
             this.lblCodArti.Name = "lblCodArti";
