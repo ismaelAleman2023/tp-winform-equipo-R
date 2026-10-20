@@ -37,7 +37,7 @@ namespace negocio
 
             try
             {
-                datos.consultaSql("select A.Id ,A.Codigo, A.Descripcion,A.IdCategoria,A.IdMarca,A.Nombre,A.Precio,C.Descripcion Categoria,M.Descripcion Marca from ARTICULOS A, CATEGORIAS C, MARCAS M where c.Id = a.IdCategoria and m.Id = a.IdMarca ");
+                datos.consultaSql("select A.Id ,A.Codigo, A.Descripcion,A.IdCategoria,A.IdMarca,A.Nombre,A.Precio,C.Descripcion Categoria, M.Descripcion Marca from ARTICULOS A, CATEGORIAS C, MARCAS M where c.Id = a.IdCategoria and m.Id = a.IdMarca ");
                 datos.ejecutarLetura();
 
                 while (datos.Lector.Read())
@@ -64,12 +64,13 @@ namespace negocio
                     
                    
                     auxiliar.Marca_Articulo.Descripcion_Marca= (string)datos.Lector["Marca"];
-                    
+                    auxiliar.Marca_Articulo.Id_Marca = (int)datos.Lector["IdMarca"];
 
 
-        
+
+
                     auxiliar.Categoria_Articulo.Descripcion_Categoria = (string)datos.Lector["Categoria"];
-                    
+                    auxiliar.Categoria_Articulo.Id_Categoria = (int)datos.Lector["IdCategoria"];
 
                     if (!(datos.Lector["Precio"] is DBNull)) { 
                     auxiliar.Precio_Articulo = Convert.ToDecimal(datos.Lector["Precio"]);

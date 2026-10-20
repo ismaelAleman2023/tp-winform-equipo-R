@@ -20,6 +20,7 @@ namespace TPWinForm_equipo_R
         List<Imagen> listImgCargadas = new List<Imagen>();
         private int contadorImagenes = 0;
         private int actual = 0;
+        public event EventHandler Cancelado;
 
         public frmArticulo()
         {
@@ -34,15 +35,36 @@ namespace TPWinForm_equipo_R
             listImgCargadas = listaImg;
             seModifica = true;
 
-            if (listImgCargadas != null && listImgCargadas.Count > 0)
+            if (listImgCargadas != null)
+            {
+                contadorImagenes = listImgCargadas.Count;
+            }
+
+            if (contadorImagenes > 0)
             {
                 txtImagen.Text = listImgCargadas[actual].Url_Imagen;
                 cargarImagen(listImgCargadas[actual].Url_Imagen);
+               
+                lblCont.Text = contadorImagenes.ToString();
+                lblImagenActual.Text = (1 + actual).ToString();
+
+                if (contadorImagenes >= 2)
+                {
+                    pnlBtnImagenes.Visible = true;
+                }
+                pnlContador.Visible = true;
             }
+
+
+
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+
+            Cancelado?.Invoke(this, EventArgs.Empty);
+
             Close();
         }
 
@@ -261,6 +283,7 @@ namespace TPWinForm_equipo_R
             try
             {
                 ptBImagen.Load(imagen);
+                txtImagen.Text = imagen;
             }
             catch (Exception)
             {
@@ -322,8 +345,8 @@ namespace TPWinForm_equipo_R
                 actual++;
                 lblImagenActual.Text= (1 + actual).ToString();
                 img = listImgCargadas[actual ];
-                txtImagen.Text = img.Url_Imagen;
                 cargarImagen(img.Url_Imagen);
+                txtImagen.Text = img.Url_Imagen;
             }
         }
 
@@ -334,8 +357,8 @@ namespace TPWinForm_equipo_R
                 actual--;
                 lblImagenActual.Text = (1+ actual).ToString();
                 img = listImgCargadas[actual];
-                txtImagen.Text = img.Url_Imagen;
                 cargarImagen(img.Url_Imagen);
+                txtImagen.Text = img.Url_Imagen;
             }
         }
 

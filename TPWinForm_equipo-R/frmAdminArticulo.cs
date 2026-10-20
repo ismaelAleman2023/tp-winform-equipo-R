@@ -121,12 +121,36 @@ namespace TPWinForm_equipo_R
         {
             try
             {
-                frmModificarIdArt fArtMod = new frmModificarIdArt(this);
-                fArtMod.TopLevel = false;
-                fArtMod.Dock = DockStyle.Fill;
+
+                ArticuloNegocio artN = new ArticuloNegocio();
+
+                Articulo artiSelect = (Articulo)frArt.dtgArticulos.CurrentRow.DataBoundItem;
+
+                ImagenNegocio imgN = new ImagenNegocio();
+
+                List<Imagen> listaImg = imgN.BuscarImagenesId(artiSelect.Id_Articulo);
+
+                frmArticulo pantaArt = new frmArticulo(artiSelect, listaImg);
+
+                pantaArt.Cancelado += (s, args) => {
+
+                    pnlconteArti.Controls.Clear();
+                    frArt = new frmArt();
+                    frArt.TopLevel = false;
+                    frArt.Dock = DockStyle.Fill;
+                    pnlconteArti.Controls.Add(frArt);
+                    frArt.Show();
+                };
+
+                pantaArt.TopLevel = false;
+                pantaArt.FormBorderStyle = FormBorderStyle.None;
+                pantaArt.Dock = DockStyle.Fill;
+
                 pnlconteArti.Controls.Clear();
-                pnlconteArti.Controls.Add(fArtMod);
-                fArtMod.Show();
+                pnlconteArti.Controls.Add(pantaArt);
+                pantaArt.Show();
+
+                              
             }
             catch (Exception ex)
             {
