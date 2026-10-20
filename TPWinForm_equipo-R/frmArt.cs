@@ -21,12 +21,22 @@ namespace TPWinForm_equipo_R
 
         private void frmArt_Load(object sender, EventArgs e)
         {
-            cargarGrilla();
-            dtgArticulos.EnableHeadersVisualStyles = false;
+            try
+            {
+                cargarGrilla();
+                dtgArticulos.EnableHeadersVisualStyles = false;
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("=== ERROR CRÍTICO EN LA GRILLA ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+               
+            }
         }
 
 
-        private void cargarGrilla()
+        public void cargarGrilla()
         {
             ArticuloNegocio artN = new ArticuloNegocio();
 

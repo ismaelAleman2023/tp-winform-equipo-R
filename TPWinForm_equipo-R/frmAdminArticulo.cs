@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,10 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace TPWinForm_equipo_R
 {
     public partial class frmAdminArticulo : Form
     {
+        private frmArt frArt =null;
         private FrmAdminPrincipal principal;    
         public frmAdminArticulo()
         {
@@ -29,11 +33,14 @@ namespace TPWinForm_equipo_R
             try
             {
                 pnlconteArti.Controls.Clear();
-                frmArt frart= new frmArt();
-                frart.TopLevel = false;
-                frart.Dock = DockStyle.Fill;
-                pnlconteArti.Controls.Add(frart);
-                frart.Show();
+                frArt = new frmArt();
+
+                frArt.TopLevel = false;
+                frArt.Dock = DockStyle.Fill;
+
+                pnlconteArti.Controls.Add(frArt);
+
+                frArt.Show();
 
             }
             catch (Exception)
@@ -64,42 +71,47 @@ namespace TPWinForm_equipo_R
             
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            FrmAdminPrincipal principal = this.ParentForm as FrmAdminPrincipal;
-
-            if (principal != null)
-            {
-               
-                principal.pnlConteCentral.Controls.Clear();
-                frmFormuListar lista = new frmFormuListar();
-                lista.TopLevel = false;
-                lista.Dock = DockStyle.Fill; 
-                principal.pnlConteCentral.Controls.Add(lista);
-                lista.Show();
-
-            }
-
-            Close();
-
-            Close();
-        }
+    
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                frmEliminarArticulo fElimArt = new frmEliminarArticulo();
-                fElimArt.TopLevel = false;
-                fElimArt.Dock = DockStyle.Fill;
-                pnlconteArti.Controls.Clear();
-                pnlconteArti.Controls.Add(fElimArt);
-                fElimArt.Show();
+                ArticuloNegocio artN = new ArticuloNegocio();  
+                Articulo artiselc = (Articulo)frArt.dtgArticulos.CurrentRow.DataBoundItem;
+
+                DialogResult respuesta = MessageBox.Show(
+                        "¿Está seguro de eliminar el artículo?",
+                        "Confirmar eliminación",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                );
+                if (respuesta == DialogResult.Yes)
+                {
+
+                    ImagenNegocio imgN = new ImagenNegocio();
+
+
+                    imgN.eliminarImagen(artiselc.Id_Articulo);
+
+                    artN.eliminar(artiselc.Id_Articulo);
+                    MessageBox.Show("Artículo eliminado correctamente.");
+                    
+                    frArt.cargarGrilla();
+                }
+                else
+                {
+
+                    MessageBox.Show("Eliminacion cancelada.");
+                    
+                }
+
+
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                System.Diagnostics.Debug.WriteLine("=== ERROR CRÍTICO EN LA GRILLA ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
             }         
             
             

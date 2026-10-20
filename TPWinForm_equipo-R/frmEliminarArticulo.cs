@@ -42,30 +42,7 @@ namespace TPWinForm_equipo_R
                 {
 
                     // se pude poner en una clase util
-                    DialogResult respuesta = MessageBox.Show(
-                        "¿Está seguro de eliminar el artículo?",
-                        "Confirmar eliminación",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question
-    );
-                    if (respuesta == DialogResult.Yes)
-                    {
-
-                        ImagenNegocio imgN = new ImagenNegocio();
-
-
-                        imgN.eliminarImagen(art.Id_Articulo);
-
-                        artN.eliminar(aux);
-                        MessageBox.Show("Artículo eliminado correctamente.");
-                        txtidEliminar.Text = "";
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("Eliminacion cancelada.");
-                        txtidEliminar.Text = "";
-                    }
+                    
                 }
                 else
                 {
