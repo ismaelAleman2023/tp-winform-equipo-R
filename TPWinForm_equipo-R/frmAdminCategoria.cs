@@ -56,40 +56,6 @@ namespace TPWinForm_equipo_R
 
         }
 
-        private void btnSalirCate_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                if (Principal != null)
-                {
-
-                    Principal.pnlConteCentral.Controls.Clear();
-                    frmFormuListar lista = new frmFormuListar();
-                    lista.TopLevel = false;
-                    lista.Dock = DockStyle.Fill;
-                    Principal.pnlConteCentral.Controls.Add(lista);
-                    lista.Show();
-
-                }
-
-                Close();
-
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine("ERROR INTERFAZ: SALIR");
-                System.Diagnostics.Debug.WriteLine(ex.ToString());
-
-                MessageBox.Show("No se pudo regresar a la pantalla anterior correctamente.",
-                       "Error de Interfaz", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-
-
-            }
-
-        }
 
         private void btnEliminarCate_Click(object sender, EventArgs e)
         {
@@ -101,13 +67,14 @@ namespace TPWinForm_equipo_R
 
                     Categoria seleccionada = (Categoria)listcat.dgvCate.CurrentRow.DataBoundItem;
 
-                   
+
                     bool asociado = validarArt(seleccionada.Descripcion_Categoria);
 
-                    if (asociado) {
+                    if (asociado)
+                    {
                         MessageBox.Show("No se puede Eliminar Una categoria que esta asociada a un Articulo");
                         return;
-                    
+
                     }
 
 
@@ -137,16 +104,22 @@ namespace TPWinForm_equipo_R
             }
             catch (Exception ex)
             {
-               
+
                 System.Diagnostics.Debug.WriteLine("ERROR EN BOTÓN ELIMINAR DIRECTO");
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
-                MessageBox.Show("No se pudo eliminar la categoría seleccionada. Verifique que no esté vinculada a ningún artículo.",
+                MessageBox.Show("Ocurrió un error inesperado al intentar eliminar la categoría. Por favor, intente nuevamente más tarde.",
                                 "Error del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
+            finally
+            {
 
                 if (listcat != null && listcat.dgvCate != null)
                 {
                     listcat.dgvCate.ClearSelection();
                 }
+
 
             }
 

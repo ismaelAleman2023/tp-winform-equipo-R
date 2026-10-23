@@ -59,7 +59,14 @@ namespace TPWinForm_equipo_R
             catch (Exception ex)
             {
 
-                throw ex;
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL CARGAR EL DETALLE DEL ARTÍCULO ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+              
+                MessageBox.Show("Ocurrió un error al mostrar los detalles del artículo.",
+                                "Error del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
             
             

@@ -67,22 +67,42 @@ namespace TPWinForm_equipo_R
         {
             try
             {
-                ImagenNegocio imgN = new ImagenNegocio();
-                List<Imagen> listaImg = new List<Imagen>();
-                Articulo art = new Articulo();
-                Imagen img = new Imagen();
+                if (dtgListar != null && dtgListar.CurrentRow != null)
+                {
+                    ImagenNegocio imgN = new ImagenNegocio();
+                    List<Imagen> listaImg = new List<Imagen>();
+                    Articulo art = new Articulo();
+                    Imagen img = new Imagen();
 
-                art = (Articulo)dtgListar.CurrentRow.DataBoundItem;
+                    art = (Articulo)dtgListar.CurrentRow.DataBoundItem;
 
-                listaImg = imgN.BuscarImagenesId(art.Id_Articulo);
-           
-                FrmDetalle deta = new FrmDetalle(art, listaImg, this);
-                deta.ShowDialog();
+                    listaImg = imgN.BuscarImagenesId(art.Id_Articulo);
+
+                    FrmDetalle deta = new FrmDetalle(art, listaImg, this);
+                    deta.ShowDialog();
+
+                }
+                else{
+
+                    MessageBox.Show("Por favor, seleccione un artículo de la lista para ver sus detalles.",
+                                "Aviso",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                }
+
 
             }
             catch (Exception ex) 
-            { throw ex;
-            
+            {
+
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL ABRIR EL DETALLE DEL ARTÍCULO ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                MessageBox.Show("No se pudo cargar la ventana de detalles del artículo.",
+                                "Error del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+
             }
         }
 
@@ -207,7 +227,14 @@ namespace TPWinForm_equipo_R
             catch (Exception ex)
             {
 
-                throw ex;
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL APLICAR FILTROS ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                
+                MessageBox.Show("Ocurrió un error al aplicar el filtro.",
+                                "Error del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
            
         }

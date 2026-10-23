@@ -86,7 +86,15 @@ namespace TPWinForm_equipo_R
             catch (Exception ex)
             {
 
-                throw ex;
+              
+                System.Diagnostics.Debug.WriteLine("ERROR EN BOTÓN AGREGAR ARTÍCULO");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+               
+                MessageBox.Show("No se pudo abrir el formulario para agregar el artículo.",
+                                "Error de Interfaz",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
             
         }
@@ -132,6 +140,11 @@ namespace TPWinForm_equipo_R
             {
                 System.Diagnostics.Debug.WriteLine("=== ERROR CRÍTICO EN LA GRILLA ===");
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                MessageBox.Show("No se pudo eliminar el artículo seleccionado. intente nuevamente.",
+                        "Error del Sistema",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
             }         
             
             
@@ -184,7 +197,13 @@ namespace TPWinForm_equipo_R
             catch (Exception ex)
             {
 
-                throw ex;
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL ABRIR FORMULARIO DE MODIFICACIÓN DE ARTÍCULO ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                MessageBox.Show("No se pudo cargar el formulario de modificación del artículo.",
+                                "Error del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
     }

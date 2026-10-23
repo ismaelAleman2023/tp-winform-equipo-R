@@ -154,28 +154,5 @@ namespace TPWinForm_equipo_R
             }
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (principal != null)
-                {
-                    principal.pnlConteCentral.Controls.Clear();
-                    frmFormuListar lista = new frmFormuListar();
-                    lista.TopLevel = false;
-                    lista.Dock = DockStyle.Fill;
-                    principal.pnlConteCentral.Controls.Add(lista);
-                    lista.Show();
-                }
-
-                Close();
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.ToString());
-                MessageBox.Show("No se pudo regresar a la pantalla anterior.",
-                                "Error de Interfaz", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
     }
 }

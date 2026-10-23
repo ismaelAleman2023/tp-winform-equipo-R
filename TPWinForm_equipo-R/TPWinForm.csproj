@@ -108,12 +108,6 @@
     <EmbeddedResource Include="FrmListaCategoria.resx">
       <DependentUpon>FrmListaCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="frmFormuListar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFormuListar.Designer.cs">
-      <DependentUpon>frmFormuListar.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAdminCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,9 +150,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormuCategoria.resx">
       <DependentUpon>frmFormuCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFormuListar.resx">
-      <DependentUpon>frmFormuListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormuMarca.resx">
       <DependentUpon>frmFormuMarca.cs</DependentUpon>

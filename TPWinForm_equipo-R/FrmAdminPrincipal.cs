@@ -41,8 +41,15 @@ namespace TPWinForm_equipo_R
             }
             catch(Exception ex) {
 
-                throw ex;
-            
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL ABRIR LA PANTALLA DE CATEGORÍAS ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                
+                MessageBox.Show("No se pudo cargar la pantalla de administración de categorías.",
+                                "Error de Interfaz",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+
             }
             
 
@@ -63,8 +70,15 @@ namespace TPWinForm_equipo_R
             }
             catch (Exception ex) {
 
-                throw ex;
-            
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL ABRIR LA PANTALLA DE MARCAS ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+              
+                MessageBox.Show("No se pudo cargar la pantalla de administración de marcas.",
+                                "Error de Interfaz",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+
             }
            
 
@@ -83,8 +97,15 @@ namespace TPWinForm_equipo_R
             }
             catch (Exception ex) 
             {
-                throw ex;
-            
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL ABRIR LA PANTALLA DE ARTÍCULOS ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+                
+                MessageBox.Show("No se pudo cargar la pantalla de administración de artículos.",
+                                "Error de Interfaz",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+
             }
 
                       
@@ -107,7 +128,14 @@ namespace TPWinForm_equipo_R
             catch (Exception ex)
             {
 
-                throw ex;
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL VOLVER / RECARGAR GRILLA ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+               
+                MessageBox.Show("Ocurrió un error al actualizar la lista principal.",
+                                "Error del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
             
 

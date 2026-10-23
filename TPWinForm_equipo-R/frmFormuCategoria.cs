@@ -85,28 +85,34 @@ namespace TPWinForm_equipo_R
 
         private void frmFormuCategoria_Load(object sender, EventArgs e)
         {
-
-
-            if (categoriaModificar != null)
+            try
             {
-
-                txtId.Text = categoriaModificar.Id_Categoria.ToString();
-                txtDescripcion.Text = categoriaModificar.Descripcion_Categoria;
-                lbTituloCate.Text = "Modificar Categoria";
-
-
+                if (categoriaModificar != null)
+                {
+                    txtId.Text = categoriaModificar.Id_Categoria.ToString();
+                    txtDescripcion.Text = categoriaModificar.Descripcion_Categoria;
+                    lbTituloCate.Text = "Modificar Categoria";
+                }
+                else
+                {
+                    txtId.Text = "Id Asignado Automáticamente";
+                    lbTituloCate.Text = "Agregar Categoria";
+                }
             }
-            else
+            catch (Exception ex)
             {
+                
+                System.Diagnostics.Debug.WriteLine("=== ERROR AL CARGAR EL FORMULARIO DE CATEGORÍA ===");
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
 
-                txtId.Text = "Id Asignado Automanticamente";
-
-                lbTituloCate.Text = "Agregar Categoria";
+          
+                MessageBox.Show("Ocurrió un error al preparar el formulario de categoría.",
+                                "Error del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
-
-
-
         }
+
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
